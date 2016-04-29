@@ -1,0 +1,19 @@
+{
+  "name": "rocket-labs/sellercenter-sdk-php",
+  "description": "SellerCenter SDK for PHP",
+  "license": "MIT",
+  "require": {
+    "php": ">=5.5",
+    "guzzlehttp/guzzle": "~6.1",
+    "psr/http-message": "~1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.8,<5.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src"
+    }
+  },
+  "minimum-stability": "stable"
+}
