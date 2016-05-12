@@ -17,6 +17,9 @@ final class Endpoints
      */
     protected static $order;
 
+    /** @var Product */
+    protected static $product;
+
     /**
      * @var Product
      */
