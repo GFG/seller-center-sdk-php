@@ -21,15 +21,18 @@ class GetDocumentTest extends \PHPUnit_Framework_TestCase
 
     public function testGetResponseClassName()
     {
-        $request = new GetDocument([10], "hello you !");
+        $request = new GetDocument([10], 'hello you !');
         $this->assertEquals(Response::class, $request->getResponseClassName());
     }
 
     public function testGetMethod()
     {
-        $this->assertEquals(Client::GET, (new GetDocument([10], "hello you !"))->getMethod());
+        $this->assertEquals(Client::GET, (new GetDocument([10], 'hello you !'))->getMethod());
     }
 
+    /**
+     * @return array
+     */
     public function toArrayDataProvider()
     {
         return [

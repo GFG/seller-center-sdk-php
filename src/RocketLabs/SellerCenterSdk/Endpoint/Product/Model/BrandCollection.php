@@ -1,6 +1,6 @@
 <?php
 
-namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Model;
+namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Model;
 
 use RocketLabs\SellerCenterSdk\Core\Model\RestrictedArrayCollection;
 

@@ -2,8 +2,8 @@
 namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Response;
 
 use RocketLabs\SellerCenterSdk\Core\Response\GenericResponse;
-use RocketLabs\SellerCenterSdk\Endpoint\Order\Model\Brand;
-use RocketLabs\SellerCenterSdk\Endpoint\Order\Model\BrandCollection;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\Brand;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\BrandCollection;
 
 class GetBrands extends GenericResponse
 {
@@ -27,9 +27,8 @@ class GetBrands extends GenericResponse
     protected function processDecodedResponse(array $responseData)
     {
         parent::processDecodedResponse($responseData);
-
         if (isset($this->body[static::BRANDS_KEY])) {
-            $this->items = new BrandCollection(
+            $this->brands = new BrandCollection(
                 $this->prepareBrands()
             );
         }
@@ -45,8 +44,8 @@ class GetBrands extends GenericResponse
         }
 
         return array_map(
-            function ($orderData) {
-                return new Brand($orderData);
+            function (array $brandData) {
+                return new Brand($brandData);
             },
             $this->body[static::BRANDS_KEY][static::BRAND_KEY]
         );

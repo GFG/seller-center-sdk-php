@@ -1,6 +1,6 @@
 <?php
 
-namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Model;
+namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Model;
 
 use RocketLabs\SellerCenterSdk\Core\Model\ModelAbstract;
 
@@ -9,6 +9,7 @@ use RocketLabs\SellerCenterSdk\Core\Model\ModelAbstract;
  */
 class Brand extends ModelAbstract
 {
+    const ID_KEY = 'BrandId';
     const NAME_KEY = 'Name';
     const GLOBAL_IDENTIFIER_KEY = 'GlobalIdentifier';
 
@@ -16,9 +17,18 @@ class Brand extends ModelAbstract
      * @var array
      */
     protected $fieldDefinition = [
+        self::ID_KEY => self::TYPE_INT,
         self::NAME_KEY => self::TYPE_STRING,
         self::GLOBAL_IDENTIFIER_KEY => self::TYPE_STRING,
     ];
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->data[self::ID_KEY];
+    }
 
     /**
      * @return string

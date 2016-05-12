@@ -17,8 +17,6 @@ class GetBrands extends GenericRequest
 
     /**
      * GetBrands constructor.
-     * @param int[] $orderItemIds
-     * @param string $documentType
      */
     public function __construct()
     {
