@@ -2,11 +2,13 @@
 
 namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Response;
 
-
 use RocketLabs\SellerCenterSdk\Core\Response\GenericResponse;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\ProductCollection;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\Product;
 
+/**
+ * Class GetProducts
+ */
 class GetProducts extends GenericResponse
 {
     const PRODUCTS_KEY = 'Products';
@@ -41,7 +43,7 @@ class GetProducts extends GenericResponse
 
             $this->products = new ProductCollection([]);
 
-            foreach($products as $product) {
+            foreach ($products as $product) {
                 $this->products->add(new Product($product));
             }
         }

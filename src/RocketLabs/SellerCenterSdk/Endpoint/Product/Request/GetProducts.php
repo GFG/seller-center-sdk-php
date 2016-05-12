@@ -5,8 +5,11 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Request;
 
 use RocketLabs\SellerCenterSdk\Core\Client;
 use RocketLabs\SellerCenterSdk\Core\Request\GenericRequest;
-use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\GetProductsTest as GetProductsResponse;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\GetProducts as GetProductsResponse;
 
+/**
+ * Class GetProducts
+ */
 class GetProducts extends GenericRequest
 {
     const ACTION = 'GetProducts';
@@ -25,6 +28,20 @@ class GetProducts extends GenericRequest
     const SKU_SELLER_LIST_FIELD   = 'SkuSellerList';
     const GLOBAL_IDENTIFIER_FIELD = 'GlobalIdentifier';
 
+    /**
+     * GetProducts constructor.
+     *
+     * @param \DateTime|null $createdAfter
+     * @param \DateTime|null $createdBefore
+     * @param \DateTime|null $updatedAfter
+     * @param \DateTime|null $updatedBefore
+     * @param null|string $search
+     * @param null|string $filter
+     * @param null|int $limit
+     * @param null|int $offset
+     * @param null|string $skuSellerList
+     * @param null|bool $globalIdentifier
+     */
     public function __construct(
         \DateTime $createdAfter = null,
         \DateTime $createdBefore = null,
