@@ -7,10 +7,14 @@ namespace RocketLabs\SellerCenterSdk\Endpoint;
  */
 final class Endpoints
 {
-    /** @var Order */
+    /**
+     * @var Order
+     */
     protected static $order;
 
-    /** @var Product */
+    /**
+     * @var Product
+     */
     protected static $product;
 
     /**

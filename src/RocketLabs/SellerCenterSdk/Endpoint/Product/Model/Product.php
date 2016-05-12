@@ -1,56 +1,65 @@
 <?php
+
+namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Model;
+
 use RocketLabs\SellerCenterSdk\Core\Model\ModelAbstract;
 
+/**
+ * Class Product
+ */
 class Product extends ModelAbstract
 {
-    const SELLERSKU = 'SellerSku';
-    const SHOPSKU = 'ShopSku';
+    const SELLER_SKU = 'SellerSku';
+    const SHOP_SKU = 'ShopSku';
     const NAME = 'Name';
     const BRAND = 'Brand';
     const DESCRIPTION = 'Description';
-    const TAXCLASS = 'TaxClass';
+    const TAX_CLASS = 'TaxClass';
     const VARIATION = 'Variation';
-    const PARENTSKU = 'ParentSku';
+    const PARENT_SKU = 'ParentSku';
     const QUANTITY = 'Quantity';
-    const FULFILLMENTBYNONSELLABLE = 'FulfillmentByNonSellable';
+    const FULFILLMENT_BY_NON_SELLABLE = 'FulfillmentByNonSellable';
     const AVAILABLE = 'Available';
     const PRICE = 'Price';
-    const SALEPRICE = 'SalePrice';
-    const SALESTARTDATE = 'SaleStartDate';
-    const SALEENDDATE = 'SaleEndDate';
+    const SALE_PRICE = 'SalePrice';
+    const SALE_START_DATE = 'SaleStartDate';
+    const SALE_END_DATE = 'SaleEndDate';
     const STATUS = 'Status';
-    const PRODUCTID = 'ProductId';
+    const PRODUCT_ID = 'ProductId';
     const URL = 'Url';
-    const MAINIMAGE = 'MainImage';
+    const MAIN_IMAGE = 'MainImage';
     const IMAGES = 'Images';
-    const PRIMARYCATEGORY = 'PrimaryCategory';
+    const PRIMARY_CATEGORY = 'PrimaryCategory';
     const CATEGORIES = 'Categories';
-    const PRODUCTDATA = 'ProductData';
+    const PRODUCT_DATA = 'ProductData';
 
+    /**
+     * @var array
+     */
     protected $fieldDefinition = [
-        self::SELLERSKU => self::TYPE_STRING,
-        self::SHOPSKU => self::TYPE_STRING,
+        self::SELLER_SKU => self::TYPE_STRING,
+        self::SHOP_SKU => self::TYPE_STRING,
         self::NAME => self::TYPE_STRING,
         self::BRAND => self::TYPE_STRING,
         self::DESCRIPTION => self::TYPE_STRING,
-        self::TAXCLASS => self::TYPE_STRING,
+        self::TAX_CLASS => self::TYPE_STRING,
         self::VARIATION => self::TYPE_STRING,
-        self::PARENTSKU => self::TYPE_STRING,
+        self::PARENT_SKU => self::TYPE_STRING,
         self::QUANTITY => self::TYPE_INT,
-        self::FULFILLMENTBYNONSELLABLE => self::TYPE_STRING,
+        self::FULFILLMENT_BY_NON_SELLABLE => self::TYPE_STRING,
         self::AVAILABLE => self::TYPE_STRING,
         self::PRICE => self::TYPE_FLOAT,
-        self::SALEPRICE => self::TYPE_FLOAT,
-        self::SALESTARTDATE => self::TYPE_DATETIME,
-        self::SALEENDDATE => self::TYPE_DATETIME,
+        self::SALE_PRICE => self::TYPE_FLOAT,
+        self::SALE_START_DATE => self::TYPE_DATETIME,
+        self::SALE_END_DATE => self::TYPE_DATETIME,
         self::STATUS => self::TYPE_STRING,
-        self::PRODUCTID => self::TYPE_STRING,
+        self::PRODUCT_ID => self::TYPE_STRING,
         self::URL => self::TYPE_STRING,
-        self::MAINIMAGE => self::TYPE_MIXED,
+        self::MAIN_IMAGE => self::TYPE_MIXED,
         self::IMAGES => self::TYPE_STRING,
-        self::PRIMARYCATEGORY => self::TYPE_STRING,
+        self::PRIMARY_CATEGORY => self::TYPE_STRING,
         self::CATEGORIES => self::TYPE_STRING,
-        self::PRODUCTDATA => self::TYPE_STRING,
+        self::PRODUCT_DATA => self::TYPE_STRING,
     ];
 
     /**
@@ -67,7 +76,7 @@ class Product extends ModelAbstract
      */
     public function getSellerSku()
     {
-        return $this->data[self::SELLERSKU];
+        return $this->data[self::SELLER_SKU];
     }
 
     /**
@@ -76,7 +85,7 @@ class Product extends ModelAbstract
      */
     public function setSellerSku($sellerSku)
     {
-        $this->data[self::SELLERSKU] = $sellerSku;
+        $this->data[self::SELLER_SKU] = $sellerSku;
         return $this;
     }
 
@@ -85,7 +94,7 @@ class Product extends ModelAbstract
      */
     public function getShopSku()
     {
-        return $this->data[self::SHOPSKU];
+        return $this->data[self::SHOP_SKU];
     }
 
     /**
@@ -94,7 +103,7 @@ class Product extends ModelAbstract
      */
     public function setShopSku($shopSku)
     {
-        $this->data[self::SHOPSKU] = $shopSku;
+        $this->data[self::SHOP_SKU] = $shopSku;
         return $this;
     }
 
@@ -157,7 +166,7 @@ class Product extends ModelAbstract
      */
     public function getTaxClass()
     {
-        return $this->data[self::TAXCLASS];
+        return $this->data[self::TAX_CLASS];
     }
 
     /**
@@ -166,7 +175,7 @@ class Product extends ModelAbstract
      */
     public function setTaxClass($taxClass)
     {
-        $this->data[self::TAXCLASS] = $taxClass;
+        $this->data[self::TAX_CLASS] = $taxClass;
         return $this;
     }
 
@@ -193,7 +202,7 @@ class Product extends ModelAbstract
      */
     public function getParentSku()
     {
-        return $this->data[self::PARENTSKU];
+        return $this->data[self::PARENT_SKU];
     }
 
     /**
@@ -202,7 +211,7 @@ class Product extends ModelAbstract
      */
     public function setParentSku($parentSku)
     {
-        $this->data[self::PARENTSKU] = $parentSku;
+        $this->data[self::PARENT_SKU] = $parentSku;
         return $this;
     }
 
@@ -229,7 +238,7 @@ class Product extends ModelAbstract
      */
     public function getFulfillmentByNonSellable()
     {
-        return $this->data[self::FULFILLMENTBYNONSELLABLE];
+        return $this->data[self::FULFILLMENT_BY_NON_SELLABLE];
     }
 
     /**
@@ -238,7 +247,7 @@ class Product extends ModelAbstract
      */
     public function setFulfillmentByNonSellable($fulfillmentByNonSellable)
     {
-        $this->data[self::FULFILLMENTBYNONSELLABLE] = $fulfillmentByNonSellable;
+        $this->data[self::FULFILLMENT_BY_NON_SELLABLE] = $fulfillmentByNonSellable;
         return $this;
     }
 
@@ -283,7 +292,7 @@ class Product extends ModelAbstract
      */
     public function getSalePrice()
     {
-        return $this->data[self::SALEPRICE];
+        return $this->data[self::SALE_PRICE];
     }
 
     /**
@@ -292,7 +301,7 @@ class Product extends ModelAbstract
      */
     public function setSalePrice($salePrice)
     {
-        $this->data[self::SALEPRICE] = $salePrice;
+        $this->data[self::SALE_PRICE] = $salePrice;
         return $this;
     }
 
@@ -301,7 +310,7 @@ class Product extends ModelAbstract
      */
     public function getSaleStartDate()
     {
-        return $this->data[self::SALESTARTDATE];
+        return $this->data[self::SALE_START_DATE];
     }
 
     /**
@@ -310,7 +319,7 @@ class Product extends ModelAbstract
      */
     public function setSaleStartDate($saleStartDate)
     {
-        $this->data[self::SALESTARTDATE] = $saleStartDate;
+        $this->data[self::SALE_START_DATE] = $saleStartDate;
         return $this;
     }
 
@@ -319,7 +328,7 @@ class Product extends ModelAbstract
      */
     public function getSaleEndDate()
     {
-        return $this->data[self::SALEENDDATE];
+        return $this->data[self::SALE_END_DATE];
     }
 
     /**
@@ -328,7 +337,7 @@ class Product extends ModelAbstract
      */
     public function setSaleEndDate($saleEndDate)
     {
-        $this->data[self::SALEENDDATE] = $saleEndDate;
+        $this->data[self::SALE_END_DATE] = $saleEndDate;
         return $this;
     }
 
@@ -355,7 +364,7 @@ class Product extends ModelAbstract
      */
     public function getProductId()
     {
-        return $this->data[self::PRODUCTID];
+        return $this->data[self::PRODUCT_ID];
     }
 
     /**
@@ -364,7 +373,7 @@ class Product extends ModelAbstract
      */
     public function setProductId($productId)
     {
-        $this->data[self::PRODUCTID] = $productId;
+        $this->data[self::PRODUCT_ID] = $productId;
         return $this;
     }
 
@@ -391,7 +400,7 @@ class Product extends ModelAbstract
      */
     public function getMainImage()
     {
-        return $this->data[self::MAINIMAGE];
+        return $this->data[self::MAIN_IMAGE];
     }
 
     /**
@@ -400,7 +409,7 @@ class Product extends ModelAbstract
      */
     public function setMainImage($mainImage)
     {
-        $this->data[self::MAINIMAGE] = $mainImage;
+        $this->data[self::MAIN_IMAGE] = $mainImage;
         return $this;
     }
 
@@ -427,7 +436,7 @@ class Product extends ModelAbstract
      */
     public function getPrimaryCategory()
     {
-        return $this->data[self::PRIMARYCATEGORY];
+        return $this->data[self::PRIMARY_CATEGORY];
     }
 
     /**
@@ -436,7 +445,7 @@ class Product extends ModelAbstract
      */
     public function setPrimaryCategory($primaryCategory)
     {
-        $this->data[self::PRIMARYCATEGORY] = $primaryCategory;
+        $this->data[self::PRIMARY_CATEGORY] = $primaryCategory;
         return $this;
     }
 
@@ -463,7 +472,7 @@ class Product extends ModelAbstract
      */
     public function getProductData()
     {
-        return $this->data[self::PRODUCTDATA];
+        return $this->data[self::PRODUCT_DATA];
     }
 
     /**
@@ -472,28 +481,8 @@ class Product extends ModelAbstract
      */
     public function setProductData($productData)
     {
-        $this->data[self::PRODUCTDATA] = $productData;
+        $this->data[self::PRODUCT_DATA] = $productData;
         return $this;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
