@@ -5,6 +5,9 @@ use RocketLabs\SellerCenterSdk\Core\Response\GenericResponse;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\Brand;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\BrandCollection;
 
+/**
+ * Class GetBrands
+ */
 class GetBrands extends GenericResponse
 {
     const BRANDS_KEY = 'Brands';
