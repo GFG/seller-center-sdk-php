@@ -10,7 +10,7 @@ require_once __DIR__ . '/../../config/config.php';
 
 $client = Client::create(new Configuration(SC_API_URL, SC_API_USER, SC_API_KEY));
 
-$sellerSku = 'win1476';
+$sellerSku = 'SKU0001';  // Please change the SellerSKU for Your system.
 
 $sampleImg1 = 'http://hallsf.imperial.ac.uk/gabor/wp-content/uploads/2015/12/Brandenburg-Gate-West-Berlin.jpg';
 $sampleImg2 = 'http://turpogoda.ru/photo/month_city_img/45_7_2.jpg';
