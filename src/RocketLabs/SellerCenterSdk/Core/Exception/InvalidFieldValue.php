@@ -2,20 +2,17 @@
 
 namespace RocketLabs\SellerCenterSdk\Core\Exception;
 
-/**
- * Class InvalidFieldValue
- */
 class InvalidFieldValue extends \InvalidArgumentException
 {
-    const MESSAGE = 'Invalid field value "%s" has been given. You can use following values "%s"';
+    const MESSAGE = 'Invalid field value "%s" has been given. %s';
 
     /**
      * InvalidSortingField constructor.
      * @param string $value
-     * @param array $allowedFields
+     * @param string $description
      */
-    public function __construct($value, array $allowedFields)
+    public function __construct($value, $description = '')
     {
-        parent::__construct(sprintf(static::MESSAGE, $value, implode('", "', $allowedFields)));
+        parent::__construct(trim(printf(static::MESSAGE, $value, $description)));
     }
 }

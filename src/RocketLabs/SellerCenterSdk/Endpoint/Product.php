@@ -3,6 +3,7 @@
 namespace RocketLabs\SellerCenterSdk\Endpoint;
 
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\GetProducts;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\Image;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\ProductCreate as ProductCreateBuilder;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetBrands;
 
@@ -33,5 +34,14 @@ final class Product
     public function getProducts()
     {
         return new GetProducts();
+    }
+
+    /**
+     * @param string $sellerSku
+     * @return Image
+     */
+    public function image($sellerSku)
+    {
+        return new Image($sellerSku);
     }
 }
