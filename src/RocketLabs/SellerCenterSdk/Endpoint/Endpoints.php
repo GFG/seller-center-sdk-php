@@ -8,6 +8,11 @@ namespace RocketLabs\SellerCenterSdk\Endpoint;
 final class Endpoints
 {
     /**
+     * @var Feed
+     */
+    protected static $feed;
+
+    /**
      * @var Order
      */
     protected static $order;
@@ -16,6 +21,17 @@ final class Endpoints
      * @var Product
      */
     protected static $product;
+
+    /**
+     * @return Feed
+     */
+    public static function feed()
+    {
+        if (!static::$feed) {
+            static::$feed = new Feed();
+        }
+        return static::$feed;
+    }
 
     /**
      * @return Order
