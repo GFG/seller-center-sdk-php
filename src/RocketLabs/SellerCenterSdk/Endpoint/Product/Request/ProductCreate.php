@@ -5,12 +5,11 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Request;
 use RocketLabs\SellerCenterSdk\Core\Client;
 use RocketLabs\SellerCenterSdk\Core\Request\GenericRequest;
 use RocketLabs\SellerCenterSdk\Core\Response\ErrorResponse;
-use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\Product;
-use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\ProductCreate as ProductCreateResponse;
+use RocketLabs\SellerCenterSdk\Core\Response\GenericResponse;
 
 /**
  * Class ProductCreate
- * @method ProductCreateResponse|ErrorResponse call(Client $client)
+ * @method GenericResponse|ErrorResponse call(Client $client)
  */
 class ProductCreate extends GenericRequest
 {
@@ -18,21 +17,18 @@ class ProductCreate extends GenericRequest
 
     /**
      * ProductCreate constructor.
+     *
+     * @param array $productCreateData
      */
-    public function __construct()
+    public function __construct(array $productCreateData)
     {
-        parent::__construct(
-            Client::GET,
-            static::ACTION,
-            static::V1
-        );
-    }
 
-    /**
-     * @return string
-     */
-    public function getResponseClassName()
-    {
-        return ProductCreateResponse::class;
+        parent::__construct(
+            Client::POST,
+            static::ACTION,
+            static::V1,
+            [],
+            $productCreateData
+        );
     }
 }

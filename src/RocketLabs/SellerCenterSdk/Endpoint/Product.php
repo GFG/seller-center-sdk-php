@@ -3,8 +3,8 @@
 namespace RocketLabs\SellerCenterSdk\Endpoint;
 
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\GetProducts;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\ProductCreate as ProductCreateBuilder;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetBrands;
-use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\ProductCreate;
 
 /**
  * Class Product
@@ -20,11 +20,11 @@ final class Product
     }
 
     /**
-     * @return ProductCreate
+     * @return ProductCreateBuilder
      */
-    public function getProductCreate()
+    public function productCreate()
     {
-        return new ProductCreate();
+        return new ProductCreateBuilder();
     }
 
     /**

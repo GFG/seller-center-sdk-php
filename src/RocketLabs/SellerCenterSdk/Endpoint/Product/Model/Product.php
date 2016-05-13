@@ -306,7 +306,7 @@ class Product extends ModelAbstract
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getSaleStartDate()
     {
@@ -314,7 +314,7 @@ class Product extends ModelAbstract
     }
 
     /**
-     * @param DateTime $saleStartDate
+     * @param \DateTime $saleStartDate
      * @return Product
      */
     public function setSaleStartDate($saleStartDate)
@@ -324,7 +324,7 @@ class Product extends ModelAbstract
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getSaleEndDate()
     {
@@ -332,7 +332,7 @@ class Product extends ModelAbstract
     }
 
     /**
-     * @param DateTime $saleEndDate
+     * @param \DateTime $saleEndDate
      * @return Product
      */
     public function setSaleEndDate($saleEndDate)

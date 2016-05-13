@@ -1,5 +1,5 @@
 <?php
 
-const SC_API_URL = 'https://sellercenter.api.url/';
-const SC_API_USER = 'api@sellercenter.net';
-const SC_API_KEY = '9ffe39feb6efcdafc2ac3c045c7ec4fa3cf26924';
+const SC_API_URL = 'https://rocket:rock4me@sellercenter-api-lazada-th.sellercenter.net/';
+const SC_API_USER = 'maintenance@sellercenter.net';
+const SC_API_KEY = '0ba59f9bd1991191889a88608c5ca84166ed96c6';
