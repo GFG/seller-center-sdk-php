@@ -27,7 +27,7 @@ class ImageTest extends \PHPUnit_Framework_TestCase
     public function providerGetBodyData()
     {
         return [
-            'single test' => [
+            'few images' => [
                 'sku' => '123a',
                 'images' => [
                     'http://images.com/imgs/img10121201.jpg',
@@ -88,7 +88,7 @@ class ImageTest extends \PHPUnit_Framework_TestCase
             ],
             'valid request with no images' => [
                 'images' => [],
-                'exception' => null,
+                'exception' => InvalidFieldValue::class,
             ],
             'request with invalid urls' => [
                 'images' => [

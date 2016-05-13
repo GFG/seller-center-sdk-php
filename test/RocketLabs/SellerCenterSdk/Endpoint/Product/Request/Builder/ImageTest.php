@@ -6,7 +6,6 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Image as ImageRequest;
 
 class ImageTest extends \PHPUnit_Framework_TestCase
 {
-
     const SKU = 'SellerSKU';
 
     /**
@@ -39,15 +38,7 @@ class ImageTest extends \PHPUnit_Framework_TestCase
                     self::SKU,
                     ['http://images.com/img1.jpg', 'http://images.com/img2.jpg']
                 ),
-            ],
-            'empty images' => [
-                'methods' => [],
-                'request' => new ImageRequest(
-                    self::SKU,
-                    []
-                ),
-            ],
+            ]
         ];
     }
-
 }

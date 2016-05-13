@@ -24,6 +24,10 @@ class Image extends GenericRequest
 
     public function __construct($sellerSku, array $imageUrls)
     {
+        if (empty($imageUrls)) {
+            throw new InvalidFieldValue('[]', 'You have to add at least one image');
+        }
+
         foreach ($imageUrls as $imageUrl) {
             if (filter_var($imageUrl, FILTER_VALIDATE_URL) === false) {
                 throw new InvalidFieldValue($imageUrl, 'The value have to be a valid url.');
