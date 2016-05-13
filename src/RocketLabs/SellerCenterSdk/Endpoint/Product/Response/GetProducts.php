@@ -4,7 +4,8 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Response;
 
 
 use RocketLabs\SellerCenterSdk\Core\Response\GenericResponse;
-use RocketLabs\SellerCenterSdk\Endpoint\Order\Model\ProductCollection;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\ProductCollection;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\Product;
 
 class GetProducts extends GenericResponse
 {
@@ -32,12 +33,17 @@ class GetProducts extends GenericResponse
         parent::processDecodedResponse($responseData);
 
         if (isset($this->body[static::PRODUCTS_KEY])) {
-            if (isset($this->body[static::PRODUCTS_KEY][static::PRODUCT_KEY][\Product::SELLERSKU])) {
+            if (isset($this->body[static::PRODUCTS_KEY][static::PRODUCT_KEY][Product::SELLER_SKU])) {
                 $products = [ $this->body[static::PRODUCTS_KEY][static::PRODUCT_KEY] ];
             } else {
                 $products = $this->body[static::PRODUCTS_KEY][static::PRODUCT_KEY];
             }
-            $this->products = new ProductCollection($products);
+
+            $this->products = new ProductCollection([]);
+
+            foreach($products as $product) {
+                $this->products->add(new Product($product));
+            }
         }
     }
 }

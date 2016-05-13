@@ -5,7 +5,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Request;
 
 use RocketLabs\SellerCenterSdk\Core\Client;
 use RocketLabs\SellerCenterSdk\Core\Request\GenericRequest;
-use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\GetProducts as GetProductsResponse;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\GetProductsTest as GetProductsResponse;
 
 class GetProducts extends GenericRequest
 {
