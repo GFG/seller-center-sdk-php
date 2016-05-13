@@ -23,7 +23,7 @@ if ($response instanceof ErrorResponse) {
     /** @var GetProducts $response */
     $products = $response->getProducts();
     /** @var Product $product */
-    foreach($products as $product) {
+    foreach ($products as $product) {
         printf(
             "\n%s:\n|   sku: %s\n|   price: %s\n",
             $product->getName(),
