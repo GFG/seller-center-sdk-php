@@ -41,14 +41,7 @@ class ImageTest extends \PHPUnit_Framework_TestCase
                     self::SKU,
                     ['http://images.com/img1.jpg', 'http://images.com/img2.jpg']
                 ),
-            ],
-            'empty images' => [
-                'methods' => [],
-                'request' => new ImageRequest(
-                    self::SKU,
-                    []
-                ),
-            ],
+            ]
         ];
     }
 }
