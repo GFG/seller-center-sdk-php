@@ -3,7 +3,7 @@
 namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder;
 
 use RocketLabs\SellerCenterSdk\Core\Request\Builder\ListRequestBuilderAbstract;
-use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetProducts as GetProductsRequest;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetProductsTest as GetProductsRequest;
 
 /**
  * Class GetProducts
