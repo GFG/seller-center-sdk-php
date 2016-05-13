@@ -10,7 +10,6 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\ProductCreate as Product
  */
 class ProductCreate extends RequestBuilderAbstract
 {
-    const AGGREGATOR_NAME = 'Product';
 
     /**
      * @var string
@@ -304,7 +303,7 @@ class ProductCreate extends RequestBuilderAbstract
      * @param array $ProductData
      * @return ProductCreate
      */
-    public function setProductData($ProductData)
+    public function setProductData(array $ProductData)
     {
         $this->ProductData = $ProductData;
         return $this;
@@ -323,9 +322,9 @@ class ProductCreate extends RequestBuilderAbstract
     /**
      * @return array
      */
-    protected function toArray()
+    public function toArray()
     {
-        return [static::AGGREGATOR_NAME => $this->convertToArray($this)];
+        return $this->convertToArray($this);
     }
 
 }

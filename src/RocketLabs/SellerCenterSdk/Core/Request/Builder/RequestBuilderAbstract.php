@@ -11,16 +11,16 @@ abstract class RequestBuilderAbstract implements RequestBuilderInterface
 {
 
     /**
-     * @param RequestBuilderAbstract $object
+     * @param mixed $object
      * @return array
      */
-    protected function convertToArray(RequestBuilderAbstract $object)
+    protected function convertToArray($object)
     {
         return array_map(
-            function($value) {
+            function ($value) {
                 if ($value instanceof \DateTime) {
                     $value = $value->format(\DateTime::ISO8601);
-                } elseif (is_object($value)){
+                } elseif (is_object($value)) {
                     $value = $this->convertToArray($value);
                 }
 
