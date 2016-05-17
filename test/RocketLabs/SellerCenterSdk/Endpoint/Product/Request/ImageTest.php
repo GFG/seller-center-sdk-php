@@ -6,6 +6,9 @@ use RocketLabs\SellerCenterSdk\Core\Client;
 use RocketLabs\SellerCenterSdk\Core\Exception\InvalidFieldValue;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\FeedIdResponse;
 
+/**
+ * Class ImageTest
+ */
 class ImageTest extends \PHPUnit_Framework_TestCase
 {
     /**

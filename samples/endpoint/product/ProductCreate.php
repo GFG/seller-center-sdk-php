@@ -61,5 +61,5 @@ if ($response instanceof ErrorResponse) {
     printf("ERROR !\n");
     printf("%s\n", $response->getMessage());
 } else {
-    printf("Successful created!\n");
+    printf("The feed `%s` has been created.\n", $response->getFeedId());
 }

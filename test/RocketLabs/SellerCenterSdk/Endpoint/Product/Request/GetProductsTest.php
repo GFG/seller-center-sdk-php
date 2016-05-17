@@ -7,6 +7,9 @@ use RocketLabs\SellerCenterSdk\Core\Request\RequestInterface;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetProducts as GetProductsRequest;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\GetProducts as GetProductsResponse;
 
+/**
+ * Class GetProductsTest
+ */
 class GetProductsTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -19,7 +22,7 @@ class GetProductsTest extends \PHPUnit_Framework_TestCase
     public function testGetAction()
     {
         $req = new GetProductsRequest();
-        $this->assertEquals("GetProducts", $req->getAction());
+        $this->assertEquals('GetProducts', $req->getAction());
     }
 
     public function testGetMethod()

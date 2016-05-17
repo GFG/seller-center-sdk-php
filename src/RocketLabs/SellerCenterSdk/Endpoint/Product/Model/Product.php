@@ -32,6 +32,9 @@ class Product extends ModelAbstract
     const PRIMARY_CATEGORY = 'PrimaryCategory';
     const CATEGORIES = 'Categories';
     const PRODUCT_DATA = 'ProductData';
+    const BROWSE_NODES = 'BrowseNodes';
+    const SHIPMENT_TYPE = 'ShipmentType';
+    const CONDITION = 'Condition';
 
     /**
      * @var array
@@ -317,7 +320,7 @@ class Product extends ModelAbstract
      * @param \DateTime $saleStartDate
      * @return Product
      */
-    public function setSaleStartDate($saleStartDate)
+    public function setSaleStartDate(\DateTime $saleStartDate)
     {
         $this->data[self::SALE_START_DATE] = $saleStartDate;
         return $this;
@@ -335,7 +338,7 @@ class Product extends ModelAbstract
      * @param \DateTime $saleEndDate
      * @return Product
      */
-    public function setSaleEndDate($saleEndDate)
+    public function setSaleEndDate(\DateTime $saleEndDate)
     {
         $this->data[self::SALE_END_DATE] = $saleEndDate;
         return $this;

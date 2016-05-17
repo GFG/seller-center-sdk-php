@@ -5,11 +5,11 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Request;
 use RocketLabs\SellerCenterSdk\Core\Client;
 use RocketLabs\SellerCenterSdk\Core\Request\GenericRequest;
 use RocketLabs\SellerCenterSdk\Core\Response\ErrorResponse;
-use RocketLabs\SellerCenterSdk\Core\Response\GenericResponse;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\FeedIdResponse;
 
 /**
  * Class ProductCreate
- * @method GenericResponse|ErrorResponse call(Client $client)
+ * @method FeedIdResponse|ErrorResponse call(Client $client)
  */
 class ProductCreate extends GenericRequest
 {
@@ -30,5 +30,13 @@ class ProductCreate extends GenericRequest
             [],
             $productCreateData
         );
+    }
+
+    /**
+     * @return string
+     */
+    public function getResponseClassName()
+    {
+        return FeedIdResponse::class;
     }
 }

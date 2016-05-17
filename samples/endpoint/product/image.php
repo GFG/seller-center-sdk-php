@@ -25,5 +25,5 @@ if ($response instanceof ErrorResponse) {
     printf("ERROR !\n");
     printf("%s\n", $response->getMessage());
 } else {
-    printf("Feed has been created. Feed id = %s\n", $response->getFeedId());
+    printf("The feed `%s` has been created.\n", $response->getFeedId());
 }

@@ -22,6 +22,11 @@ class Image extends GenericRequest
     const IMAGES_KEY = 'Images';
     const IMAGE_KEY = 'Image';
 
+    /**
+     * Image constructor.
+     * @param string $sellerSku
+     * @param array $imageUrls
+     */
     public function __construct($sellerSku, array $imageUrls)
     {
         if (empty($imageUrls)) {
@@ -50,6 +55,9 @@ class Image extends GenericRequest
         );
     }
 
+    /**
+     * @return string
+     */
     public function getResponseClassName()
     {
         return FeedIdResponse::class;

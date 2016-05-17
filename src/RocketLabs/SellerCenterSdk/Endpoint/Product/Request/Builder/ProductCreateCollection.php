@@ -54,7 +54,7 @@ class ProductCreateCollection extends RequestBuilderAbstract
 
         /** @var $product ProductCreate */
         foreach ($this->products as $product) {
-            $products[static::AGGREGATOR_NAME] = $product->toArray();
+            $products[static::AGGREGATOR_NAME][] = $product->toArray();
         }
 
         return $products;

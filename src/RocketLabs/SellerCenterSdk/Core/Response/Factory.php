@@ -5,6 +5,9 @@ namespace RocketLabs\SellerCenterSdk\Core\Response;
 use Psr\Http\Message\ResponseInterface as HttpResponseInterface;
 use RocketLabs\SellerCenterSdk\Core\Exception\ApiException;
 
+/**
+ * Class Factory
+ */
 class Factory
 {
     const HTTP_CODE_200 = 200;
