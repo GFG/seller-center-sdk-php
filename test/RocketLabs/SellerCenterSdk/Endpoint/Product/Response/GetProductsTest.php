@@ -9,7 +9,7 @@ class GetProductsTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testGetProducts() {
-        $res = new GetProducts([]);
+        $res = new GetProducts(['Head' => [], 'Body' => []]);
         $this->assertInstanceOf(ProductCollection::class, $res->getProducts());
     }
 }

@@ -34,15 +34,14 @@ class GetProducts extends GenericResponse
     {
         parent::processDecodedResponse($responseData);
 
+        $this->products = new ProductCollection([]);
+
         if (isset($this->body[static::PRODUCTS_KEY])) {
             if (isset($this->body[static::PRODUCTS_KEY][static::PRODUCT_KEY][Product::SELLER_SKU])) {
                 $products = [ $this->body[static::PRODUCTS_KEY][static::PRODUCT_KEY] ];
             } else {
                 $products = $this->body[static::PRODUCTS_KEY][static::PRODUCT_KEY];
             }
-
-            $this->products = new ProductCollection([]);
-
             foreach ($products as $product) {
                 $this->products->add(new Product($product));
             }
