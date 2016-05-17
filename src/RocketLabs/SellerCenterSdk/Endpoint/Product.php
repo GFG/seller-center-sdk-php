@@ -6,7 +6,6 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\GetProducts;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\ProductCreateCollection;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\Image;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetBrands;
-use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\GetProducts;
 
 /**
  * Class Product
@@ -45,4 +44,5 @@ final class Product
     {
         return new Image($sellerSku);
     }
+
 }
