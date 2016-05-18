@@ -4,6 +4,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint;
 
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\GetProducts;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\ProductCreateCollection;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\ProductUpdateCollection;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\Image;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetBrands;
 
@@ -26,6 +27,14 @@ final class Product
     public function productCreate()
     {
         return new ProductCreateCollection();
+    }
+
+    /**
+     * @return ProductUpdateCollection
+     */
+    public function productUpdate()
+    {
+        return new ProductUpdateCollection();
     }
 
     /**

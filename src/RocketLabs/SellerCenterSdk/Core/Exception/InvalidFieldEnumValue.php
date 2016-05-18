@@ -10,7 +10,7 @@ class InvalidFieldEnumValue extends InvalidFieldValue
     const MESSAGE = 'You can use following values "%s"';
 
     /**
-     * InvalidSortingField constructor.
+     * InvalidFieldEnumValue constructor.
      * @param string $value
      * @param array $allowedFields
      */

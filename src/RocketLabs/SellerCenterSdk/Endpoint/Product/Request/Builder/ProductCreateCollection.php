@@ -13,7 +13,7 @@ class ProductCreateCollection extends RequestBuilderAbstract
     const AGGREGATOR_NAME = 'Product';
 
     /**
-     * @var ProductCreate
+     * @var ProductCreate[]
      */
     protected $products;
 
@@ -35,14 +35,6 @@ class ProductCreateCollection extends RequestBuilderAbstract
         $this->products[] = $productCreateBuilder;
 
         return $productCreateBuilder;
-    }
-
-    /**
-     * @return ProductCreate
-     */
-    public function getProducts()
-    {
-        return $this->products;
     }
 
     /**

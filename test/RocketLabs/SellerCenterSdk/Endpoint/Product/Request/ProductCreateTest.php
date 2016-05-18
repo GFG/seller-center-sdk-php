@@ -19,13 +19,9 @@ class ProductCreateTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(Client::POST, $request->getMethod());
     }
 
-    /**
-     * @dataProvider testGetResponseClassNameProvider
-     * @param array $products
-     */
-    public function testGetResponseClassName(array $products)
+    public function testGetResponseClassName()
     {
-        $this->assertEquals(FeedIdResponse::class, (new ProductCreate($products))->getResponseClassName());
+        $this->assertEquals(FeedIdResponse::class, (new ProductCreate([]))->getResponseClassName());
     }
 
     /**
@@ -35,42 +31,6 @@ class ProductCreateTest extends \PHPUnit_Framework_TestCase
     public function testConstructor(array $products)
     {
         new ProductCreate($products);
-    }
-
-    /**
-     * @return array
-     */
-    public function testGetResponseClassNameProvider()
-    {
-        $now = new \DateTimeImmutable('now');
-
-        return [
-            'valid request with one product' => [
-                'products' => [
-                    [
-                        Product::SELLER_SKU => '41053821e4',
-                        Product::NAME => 'New Product',
-                        Product::BRAND => 'A Little 7',
-                        Product::DESCRIPTION => '<![CDATA[This is a <b>bold</b> product.]]',
-                        Product::TAX_CLASS => 'default',
-                        Product::VARIATION => 'XXL',
-                        Product::PRICE => 40.00,
-                        Product::SALE_PRICE => 33,
-                        Product::SALE_START_DATE => $now->format('Y-m-d'),
-                        Product::SALE_END_DATE => $now->modify('+5 day')->format('Y-m-d'),
-                        Product::STATUS => 'active',
-                        Product::PRIMARY_CATEGORY => 5588,
-                        Product::PRODUCT_DATA => [
-                            'DescriptionEn' => 'I am a description for the new product',
-                            'NameEn' => 'I am a new product',
-                            'PackageType' => 'Parcel'
-                        ]
-
-                    ]
-                ],
-                'exception' => null,
-            ]
-        ];
     }
 
     /**
