@@ -7,6 +7,7 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\ProductCreateCol
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\ProductUpdateCollection;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\Image;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetBrands;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetCategoryTree;
 
 /**
  * Class Product
@@ -52,6 +53,11 @@ final class Product
     public function image($sellerSku)
     {
         return new Image($sellerSku);
+    }
+
+    public function getCategoryTree()
+    {
+        return new GetCategoryTree();
     }
 
 }

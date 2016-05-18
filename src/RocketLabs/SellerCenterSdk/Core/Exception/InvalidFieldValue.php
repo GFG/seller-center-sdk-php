@@ -16,6 +16,6 @@ class InvalidFieldValue extends \InvalidArgumentException
      */
     public function __construct($value, $description = '')
     {
-        parent::__construct(trim(printf(static::MESSAGE, $value, $description)));
+        parent::__construct(trim(sprintf(self::MESSAGE, $value, $description)));
     }
 }

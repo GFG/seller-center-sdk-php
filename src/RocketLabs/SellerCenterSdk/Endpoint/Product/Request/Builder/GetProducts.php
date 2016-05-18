@@ -2,6 +2,7 @@
 
 namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder;
 
+use RocketLabs\SellerCenterSdk\Core\Exception\InvalidFieldEnumValue;
 use RocketLabs\SellerCenterSdk\Core\Request\Builder\ListRequestBuilderAbstract;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetProducts as GetProductsRequest;
 
@@ -19,6 +20,20 @@ class GetProducts extends ListRequestBuilderAbstract
      * @var string
      */
     private $filter;
+
+    /**
+     * @var array
+     */
+    private $validFilter = [
+        'all',
+        'live',
+        'inactive',
+        'deleted',
+        'image-missing',
+        'pending',
+        'rejected',
+        'sold-out'
+    ];
 
     /**
      * @var array
@@ -76,6 +91,9 @@ class GetProducts extends ListRequestBuilderAbstract
     public function setFilter($filter)
     {
         $this->filter = $filter;
+        if (!in_array($filter, $this->validFilter)) {
+            throw new InvalidFieldEnumValue($filter, $this->validFilter);
+        }
         return $this;
     }
 }
