@@ -1,9 +1,9 @@
 <?php
 namespace RocketLabs\SellerCenterSdk\Core;
 
-use GuzzleHttp\Client as HttpClient;
-use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7\Request;
+use RocketLabs\SellerCenterSdk\Core\Http\ClientInterface as HttpClientInterface;
+use RocketLabs\SellerCenterSdk\Core\Http\GuzzleClientAdapter;
 use RocketLabs\SellerCenterSdk\Core\Request\OutputFormatAdapter\OutputFormatAdapterInterface;
 use RocketLabs\SellerCenterSdk\Core\Request\OutputFormatAdapter\XmlOutputFormatAdapter;
 use RocketLabs\SellerCenterSdk\Core\Request\RequestInterface;
@@ -30,7 +30,7 @@ class Client
     /** @var RequestSignatureProviderInterface */
     protected $signatureProvider;
 
-    /** @var HttpClient */
+    /** @var HttpClientInterface */
     protected $httpClient;
 
     /** @var OutputFormatAdapterInterface */
@@ -47,7 +47,7 @@ class Client
      * @param RequestSignatureProviderInterface $signatureProvider
      * @param OutputFormatAdapterInterface $outputFormatAdapter
      * @param TimestampFormatterInterface $timestampFormatter
-     * @param ClientInterface $httpClient
+     * @param HttpClientInterface $httpClient
      * @param Factory $factory
      */
     public function __construct(
@@ -55,7 +55,7 @@ class Client
         RequestSignatureProviderInterface $signatureProvider,
         OutputFormatAdapterInterface $outputFormatAdapter,
         TimestampFormatterInterface $timestampFormatter,
-        ClientInterface $httpClient,
+        HttpClientInterface $httpClient,
         Factory $factory
     ) {
         $this->configuration = $configuration;
@@ -68,16 +68,18 @@ class Client
 
     /**
      * @param Configuration $configuration
+     * @param HttpClientInterface $httpClient
+     *
      * @return Client
      */
-    public static function create(Configuration $configuration)
+    public static function create(Configuration $configuration, HttpClientInterface $httpClient = null)
     {
-        return new Client(
+        return new static(
             $configuration,
             new HashHmacRequestSignature('sha256', $configuration->getKey()),
             new XmlOutputFormatAdapter(),
             new TimestampFormatter(),
-            new HttpClient(),
+            $httpClient ?: new GuzzleClientAdapter(),
             new Factory()
         );
     }
@@ -94,7 +96,7 @@ class Client
             $this->buildUrl($request),
             [self::ACCEPT_TYPE],
             $request->getMethod() == Client::POST && !empty($request->getBodyData()) ?
-            $this->requestBodyFormatter->convertToOutputFormat($request->getBodyData()) : null
+                $this->requestBodyFormatter->convertToOutputFormat($request->getBodyData()) : null
         );
 
         $httpResponse = $this->httpClient->send($httpRequest);

@@ -137,8 +137,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $timestampMock = $this->getMock(TimestampFormatterInterface::class);
         $timestampMock->method('getFormattedTimestamp')->willReturn(self::TIMESTAMP);
 
-        /** @var \PHPUnit_Framework_MockObject_MockObject|ClientInterface $httpMock */
-        $httpMock = $this->getMock(ClientInterface::class);
+        /** @var \PHPUnit_Framework_MockObject_MockObject|Http\ClientInterface $httpMock */
+        $httpMock = $this->getMock(Http\ClientInterface::class);
         $httpMock
             ->expects($this->once())
             ->method('send')
