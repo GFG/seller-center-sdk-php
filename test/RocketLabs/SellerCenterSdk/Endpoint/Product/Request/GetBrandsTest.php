@@ -5,6 +5,9 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Request;
 use RocketLabs\SellerCenterSdk\Core\Client;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\GetBrands as Response;
 
+/**
+ * Class GetBrandsTest
+ */
 class GetBrandsTest extends \PHPUnit_Framework_TestCase
 {
     /**
