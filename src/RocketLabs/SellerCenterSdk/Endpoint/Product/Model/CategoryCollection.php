@@ -7,7 +7,7 @@ use RocketLabs\SellerCenterSdk\Core\Model\RestrictedArrayCollection;
 /**
  * Class CategoryTreeCollection
  */
-class CategoryTreeCollection extends RestrictedArrayCollection
+class CategoryCollection extends RestrictedArrayCollection
 {
-    const ELEMENT_TYPE = CategoryTree::class;
+    const ELEMENT_TYPE = Category::class;
 }

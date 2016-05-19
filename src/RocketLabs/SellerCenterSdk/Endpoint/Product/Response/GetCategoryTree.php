@@ -3,8 +3,8 @@
 namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Response;
 
 use RocketLabs\SellerCenterSdk\Core\Response\GenericResponse;
-use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\CategoryTree;
-use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\CategoryTreeCollection;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\Category;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\CategoryCollection;
 
 /**
  * Class GetCategoryTree
@@ -16,7 +16,7 @@ class GetCategoryTree extends GenericResponse
     const CATEGORY = 'Category';
 
     /**
-     * @var CategoryTreeCollection
+     * @var CategoryCollection
      */
     private $categories;
 
@@ -27,17 +27,17 @@ class GetCategoryTree extends GenericResponse
     {
         parent::processDecodedResponse($responseData);
 
-        $this->categories = new CategoryTreeCollection();
+        $this->categories = new CategoryCollection();
 
         if (isset($this->getBody()[self::CATEGORIES][self::CATEGORY])) {
             foreach ($this->getBody()[self::CATEGORIES][self::CATEGORY] as $category) {
-                $this->categories->add(new CategoryTree($category));
+                $this->categories->add(new Category($category));
             }
         }
     }
 
     /**
-     * @return CategoryTreeCollection
+     * @return CategoryCollection
      */
     public function getCategories()
     {

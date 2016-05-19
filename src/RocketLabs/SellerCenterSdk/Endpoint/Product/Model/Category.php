@@ -7,7 +7,7 @@ use RocketLabs\SellerCenterSdk\Core\Model\ModelAbstract;
 /**
  * Class CategoryTree
  */
-class CategoryTree extends ModelAbstract
+class Category extends ModelAbstract
 {
 
     const NAME = "Name";
@@ -34,13 +34,13 @@ class CategoryTree extends ModelAbstract
     {
         parent::__construct($data);
 
-        $collection = new CategoryTreeCollection();
+        $collection = new CategoryCollection();
         if (isset($data[self::CHILDREN][self::CATEGORY]['Name'])) {
             // in case of a single category
-            $collection->add(new CategoryTree($data[self::CHILDREN][self::CATEGORY]));
+            $collection->add(new Category($data[self::CHILDREN][self::CATEGORY]));
         } else if (isset($data[self::CHILDREN][self::CATEGORY])) {
             foreach ($data[self::CHILDREN][self::CATEGORY] as $child) {
-                $collection->add(new CategoryTree($child));
+                $collection->add(new Category($child));
             }
         }
 
@@ -72,7 +72,7 @@ class CategoryTree extends ModelAbstract
     }
 
     /**
-     * @return CategoryTreeCollection
+     * @return CategoryCollection
      */
     public function getChildren()
     {

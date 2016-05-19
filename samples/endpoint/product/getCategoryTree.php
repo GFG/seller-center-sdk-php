@@ -4,7 +4,7 @@ use RocketLabs\SellerCenterSdk\Core\Client;
 use RocketLabs\SellerCenterSdk\Core\Configuration;
 use RocketLabs\SellerCenterSdk\Core\Response\ErrorResponse;
 use RocketLabs\SellerCenterSdk\Endpoint\Endpoints;
-use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\CategoryTree;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\Category;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\GetCategoryTree;
 
 require_once __DIR__ . '/../../../vendor/autoload.php';
@@ -18,7 +18,7 @@ $response = Endpoints::product()->getCategoryTree()
 /**
  * Recursive print
  *
- * @param CategoryTree $cat
+ * @param Category $cat
  * @param int $depth
  */
 function printOut($cat, $depth) {

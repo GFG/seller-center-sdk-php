@@ -25,12 +25,12 @@ class GetCategoryAttributes extends RequestBuilderAbstract
     }
 
     /**
-     * @param int $PrimaryCategory
+     * @param int $primaryCategory
      * @return $this
      */
-    public function setPrimaryCategory($PrimaryCategory)
+    public function setPrimaryCategory($primaryCategory)
     {
-        $this->PrimaryCategory = $PrimaryCategory;
+        $this->PrimaryCategory = $primaryCategory;
         return $this;
     }
 

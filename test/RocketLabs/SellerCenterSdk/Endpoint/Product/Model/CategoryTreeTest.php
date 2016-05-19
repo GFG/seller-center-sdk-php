@@ -12,7 +12,7 @@ class CategoryTreeTest extends \PHPUnit_Framework_TestCase
 
     public function testSingleData()
     {
-        $tree = new CategoryTree(
+        $tree = new Category(
             [
                 'Children' => [
                     'Category' => [
@@ -25,7 +25,7 @@ class CategoryTreeTest extends \PHPUnit_Framework_TestCase
 
     public function testListData()
     {
-        $tree = new CategoryTree(
+        $tree = new Category(
             [
                 'Children' => [
                     'Category' => [

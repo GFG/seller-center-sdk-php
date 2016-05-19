@@ -12,6 +12,6 @@ class CategoryTreeCollectionTest extends \PHPUnit_Framework_TestCase
 
     public function testClass()
     {
-        $this->assertEquals(CategoryTree::class, CategoryTreeCollection::ELEMENT_TYPE);
+        $this->assertEquals(Category::class, CategoryCollection::ELEMENT_TYPE);
     }
 }

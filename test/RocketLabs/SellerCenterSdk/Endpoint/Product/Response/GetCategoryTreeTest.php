@@ -9,7 +9,7 @@
 namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Response;
 
 
-use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\CategoryTreeCollection;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\CategoryCollection;
 
 /**
  * Class GetCategoryTreeTest
@@ -31,7 +31,7 @@ class GetCategoryTreeTest extends \PHPUnit_Framework_TestCase
             ]
         ]);
 
-        $this->assertInstanceOf(CategoryTreeCollection::class, $var->getCategories());
+        $this->assertInstanceOf(CategoryCollection::class, $var->getCategories());
     }
 
 }
