@@ -14,19 +14,22 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\GetCategoryAttributes a
 class GetCategoryAttributes extends GenericRequest
 {
     const ACTION = 'GetCategoryAttributes';
+    const PRIMARY_CATEGORY = 'PrimaryCategory';
 
     /**
      * GetCategoryAttributes constructor.
      *
-     * @param array $getCategoryAttributesData
+     * @param int $primaryCategory
      */
-    public function __construct(array $getCategoryAttributesData)
+    public function __construct($primaryCategory)
     {
         parent::__construct(
             Client::GET,
             static::ACTION,
             static::V1,
-            $getCategoryAttributesData
+            [
+                static::PRIMARY_CATEGORY => $primaryCategory
+            ]
         );
     }
 

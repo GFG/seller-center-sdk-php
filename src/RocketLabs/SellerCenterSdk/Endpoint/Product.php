@@ -5,7 +5,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\GetProducts;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\ProductCreateCollection;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\ProductUpdateCollection;
-use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\GetCategoryAttributes;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetCategoryAttributes as GetCategoryAttributesRequest;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\Image;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetBrands;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetCategoryTree;
@@ -48,11 +48,13 @@ final class Product
     }
 
     /**
-     * @return GetCategoryAttributes
+     * @param int $primaryCategory
+     *
+     * @return GetCategoryAttributesRequest
      */
-    public function getCategoryAttributes()
+    public function getCategoryAttributes($primaryCategory)
     {
-        return new GetCategoryAttributes();
+        return new GetCategoryAttributesRequest($primaryCategory);
     }
 
     /**

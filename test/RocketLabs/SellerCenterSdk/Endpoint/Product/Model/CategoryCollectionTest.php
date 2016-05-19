@@ -2,12 +2,10 @@
 
 namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Model;
 
-
 /**
- * Class CategoryTreeCollectionTest
- * @package RocketLabs\SellerCenterSdk\Endpoint\Product\Model
+ * Class CategoryCollectionTest
  */
-class CategoryTreeCollectionTest extends \PHPUnit_Framework_TestCase
+class CategoryCollectionTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testClass()

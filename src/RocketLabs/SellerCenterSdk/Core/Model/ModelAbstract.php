@@ -59,11 +59,21 @@ abstract class ModelAbstract
                     break;
                 default:
                     if (is_array($data[$key])) {
-                        $this->data[$key] = new $type($data[$key]);
+                        $this->data[$key] = $this->buildObjectFromDefinition($type, $data[$key]);
                     } else {
                         $this->data[$key] = null;
                     }
             }
         }
+    }
+
+    /**
+     * @param string $class
+     * @param mixed $data
+     * @return mixed
+     */
+    protected function buildObjectFromDefinition($class, $data)
+    {
+        return new $class($data);
     }
 }

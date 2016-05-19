@@ -3,6 +3,8 @@
 namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Model;
 
 use RocketLabs\SellerCenterSdk\Core\Model\ModelAbstract;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\Attribute\Option;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\Attribute\OptionCollection;
 
 /**
  * Class Attribute
@@ -10,6 +12,7 @@ use RocketLabs\SellerCenterSdk\Core\Model\ModelAbstract;
 class Attribute extends ModelAbstract
 {
 
+    const OPTION_AGGREGATOR_NAME = 'Option';
     const NAME = 'Name';
     const LABEL = 'Label';
     const IS_MANDATORY = 'isMandatory';
@@ -28,7 +31,7 @@ class Attribute extends ModelAbstract
         self::DESCRIPTION => self::TYPE_STRING,
         self::ATTRIBUTE_TYPE => self::TYPE_STRING,
         self::EXAMPLE_VALUE => self::TYPE_STRING,
-        self::OPTIONS => self::TYPE_STRING,
+        self::OPTIONS => OptionCollection::class,
     ];
 
     /**
@@ -76,10 +79,28 @@ class Attribute extends ModelAbstract
         return $this->data[self::EXAMPLE_VALUE];
     }
     /**
-     * @return array
+     * @return OptionCollection[]
      */
     public function getOptions()
     {
         return $this->data[self::OPTIONS];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    protected function buildObjectFromDefinition($class, $data)
+    {
+
+        if ($class === OptionCollection::class) {
+            $options = [];
+            foreach ($data[static::OPTION_AGGREGATOR_NAME] as $option) {
+                $options[] = new Option(is_array($option)?$option:$data);
+            }
+
+            return parent::buildObjectFromDefinition($class, $options);
+        }
+
+        return parent::buildObjectFromDefinition($class, $data);
     }
 }

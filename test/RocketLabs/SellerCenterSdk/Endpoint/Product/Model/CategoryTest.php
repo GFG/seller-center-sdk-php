@@ -2,17 +2,15 @@
 
 namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Model;
 
-
 /**
- * Class CategoryTreeTest
- * @package RocketLabs\SellerCenterSdk\Endpoint\Product\Model
+ * Class CategoryTest
  */
-class CategoryTreeTest extends \PHPUnit_Framework_TestCase
+class CategoryTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testSingleData()
     {
-        $tree = new Category(
+        new Category(
             [
                 'Children' => [
                     'Category' => [
@@ -25,7 +23,7 @@ class CategoryTreeTest extends \PHPUnit_Framework_TestCase
 
     public function testListData()
     {
-        $tree = new Category(
+        new Category(
             [
                 'Children' => [
                     'Category' => [

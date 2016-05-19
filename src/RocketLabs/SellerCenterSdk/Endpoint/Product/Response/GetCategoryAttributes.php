@@ -33,9 +33,7 @@ class GetCategoryAttributes extends GenericResponse
         parent::processDecodedResponse($responseData);
 
         if (isset($this->body[static::ATTRIBUTE_KEY])) {
-            $this->attributes = new AttributeCollection(
-                $this->prepare()
-            );
+            $this->attributes = new AttributeCollection($this->prepare());
         }
     }
 

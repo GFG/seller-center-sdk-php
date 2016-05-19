@@ -14,9 +14,7 @@ $client = Client::create(new Configuration(SC_API_URL, SC_API_USER, SC_API_KEY))
 $primaryCategory = 1; // Please change primary category id
 
 $response = Endpoints::product()
-    ->getCategoryAttributes()
-    ->setPrimaryCategory($primaryCategory)
-    ->build()
+    ->getCategoryAttributes($primaryCategory)
     ->call($client);
 
 if ($response instanceof ErrorResponse) {
