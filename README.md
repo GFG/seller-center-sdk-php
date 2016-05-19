@@ -15,10 +15,6 @@ To use the sdk code, use Composer's [autoload](https://getcomposer.org/doc/00-in
 require_once('vendor/autoload.php');
 ```
 
-### Manual Installation
-If you do not wish to use Composer, you can clone the [repository](https://github.com/rocket-internet-berlin/SellerCenterSDK-PHP.git)
-and change your [autoloader](http://php.net/manual/en/language.oop5.autoload.php) function to allow loading of classes from the [src](src/) folder of the repository.
-
 ## 2) Implemented methods
 
 These methods can be accessed through `RocketLabs\SellerCenterSdk\Endpoint\Endpoints` class:
@@ -35,9 +31,12 @@ These methods can be accessed through `RocketLabs\SellerCenterSdk\Endpoint\Endpo
 All another methods you can call with `GenericRequest`, for more information please look at [this sample](samples/genericGetter.php) for GET-methods or [this one](samples/genericPost.php) for POST-methods.
 
 ## 3) Samples
-To understand how to work with the SDK, please look at the samples in [samples](samples/).
+To understand how to work with the SDK, please look at [samples](samples/).
 To make the samples work, change the API settings in [samples/config/config.php](samples/config/config.php).
-You need to set up the SellerCenter URL, your login and API key, after this you can run any sample and see the real results requests.
+You need to set up the SellerCenter URL (only https is supported), your login and API key.
+> **API key** can be found in your SellerCenter account under Settings > Manage Users. If a given user has no API key yet, generate it by clicking a corresponding link.
+
+After this you can run any sample and see the real results requests.
 
 > **Please note**, that POST requests could affect on your real products, orders etc. Make sure that SKUs or Order IDs
 in samples are not intersect with data in your SellerCenter account.
