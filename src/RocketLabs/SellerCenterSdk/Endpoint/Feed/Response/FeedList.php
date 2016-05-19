@@ -34,6 +34,8 @@ class FeedList extends GenericResponse
             $this->feeds = new FeedCollection(
                 $this->prepareFeeds()
             );
+        } else {
+            $this->feeds = new FeedCollection();
         }
     }
 

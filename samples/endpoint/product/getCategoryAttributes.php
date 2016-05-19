@@ -11,9 +11,11 @@ require_once __DIR__ . '/../../config/config.php';
 
 $client = Client::create(new Configuration(SC_API_URL, SC_API_USER, SC_API_KEY));
 
+$primaryCategory = 1; // Please change primary category id
+
 $response = Endpoints::product()
     ->getCategoryAttributes()
-    ->setPrimaryCategory(1)
+    ->setPrimaryCategory($primaryCategory)
     ->build()
     ->call($client);
 

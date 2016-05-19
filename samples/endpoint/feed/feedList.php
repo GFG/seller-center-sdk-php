@@ -15,11 +15,7 @@ require_once __DIR__ . '/../../config/config.php';
  */
 function printOut($label, $value)
 {
-    printf(
-        "% 20s %s \n",
-        empty($label) ? $label : $label . ':',
-        $value
-    );
+    printf("% 20s %s \n", $label, $value);
 }
 
 $client = Client::create(new Configuration(SC_API_URL, SC_API_USER, SC_API_KEY));
@@ -47,7 +43,7 @@ if ($response instanceof ErrorResponse) {
         $failureReports = $feed->getFailureReports();
         if (!is_null($failureReports)) {
             printOut('Failure Reports', 'MimeType: ' . $failureReports->getMimeType());
-            printOut('', 'File: ' . $failureReports->getFile());
+            printOut('File', $failureReports->getFile());
         } else {
             printOut('Failure Reports', '');
         }

@@ -10,16 +10,19 @@ require_once __DIR__ . '/../../config/config.php';
 
 $client = Client::create(new Configuration(SC_API_URL, SC_API_USER, SC_API_KEY));
 
+$sellerSku0 = 'Api test product'; // Please change SellerSku to your convenience
+$sellerSku1 = 'Api test product again'; // Please change SellerSku to your convenience
+
 $productCollectionRequest = Endpoints::product()->productUpdate();
 
 $productCollectionRequest
-    ->updateProduct('41053821e4')
+    ->updateProduct($sellerSku0)
     ->setPrice(40.00)
     ->setSalePrice(37)
     ->setSaleStartDate(new DateTime('now'))
     ->setSaleEndDate((new DateTime('now'))->modify('+5 day'));
 
-$productCollectionRequest->updateProduct('4105382122sse4')->setName('Product Name Again Changed');
+$productCollectionRequest->updateProduct($sellerSku1)->setName('Product Name Again Changed');
 
 $response = $productCollectionRequest->build()->call($client);
 
