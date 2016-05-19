@@ -10,6 +10,10 @@ use RocketLabs\SellerCenterSdk\Core\Exception\InvalidFieldEnumValue;
 class GetProductsTest extends \PHPUnit_Framework_TestCase
 {
 
+    /**
+     * Test function
+     * @return void
+     */
     public function testCorrectSetup()
     {
         $builder = new GetProducts();
