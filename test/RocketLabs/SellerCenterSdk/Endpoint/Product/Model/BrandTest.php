@@ -2,6 +2,9 @@
 
 namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Model;
 
+/**
+ * Class BrandTest
+ */
 class BrandTest extends \PHPUnit_Framework_TestCase
 {
     /**
