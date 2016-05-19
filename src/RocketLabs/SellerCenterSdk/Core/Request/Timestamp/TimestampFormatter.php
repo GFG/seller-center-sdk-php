@@ -2,14 +2,17 @@
 
 namespace RocketLabs\SellerCenterSdk\Core\Request\Timestamp;
 
+/**
+ * Class TimestampFormatter
+ */
 class TimestampFormatter implements TimestampFormatterInterface
 {
 
     /**
-     * @param \DateTime|null $time
+     * @param \DateTimeInterface|null $time
      * @return string
      */
-    public function getFormattedTimestamp(\DateTime $time = null)
+    public function getFormattedTimestamp(\DateTimeInterface $time = null)
     {
         if ($time === null) {
             $time = new \DateTime();

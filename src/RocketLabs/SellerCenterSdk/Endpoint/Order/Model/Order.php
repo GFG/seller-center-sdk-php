@@ -145,7 +145,7 @@ class Order extends ModelAbstract
     }
 
     /**
-     * @return \DateTimeImmutable
+     * @return \DateTimeInterface
      */
     public function getCreatedAt()
     {
@@ -153,7 +153,7 @@ class Order extends ModelAbstract
     }
 
     /**
-     * @return \DateTimeImmutable
+     * @return \DateTimeInterface
      */
     public function getUpdatedAt()
     {
@@ -177,7 +177,7 @@ class Order extends ModelAbstract
     }
 
     /**
-     * @return \DateTimeImmutable
+     * @return \DateTimeInterface
      */
     public function getPromisedShippingTime()
     {

@@ -3,12 +3,22 @@
 namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Request;
 
 use RocketLabs\SellerCenterSdk\Core\Client;
+use RocketLabs\SellerCenterSdk\Endpoint\Order\Response\GetOrder as GetOrderResponse;
 
+/**
+ * Class GetOrderTest
+ */
 class GetOrderTest extends \PHPUnit_Framework_TestCase
 {
     public function testGetMethod()
     {
         $this->assertEquals(Client::GET, (new GetOrder(10))->getMethod());
+    }
+
+    public function testResponseType()
+    {
+        $req = new GetOrder(3);
+        $this->assertEquals(GetOrderResponse::class, $req->getResponseClassName());
     }
 
     /**
@@ -21,6 +31,9 @@ class GetOrderTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedArray, (new GetOrder($id))->toArray());
     }
 
+    /**
+     * @return array
+     */
     public function providerToArray()
     {
         return [

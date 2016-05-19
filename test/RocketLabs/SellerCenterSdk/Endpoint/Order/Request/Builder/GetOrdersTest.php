@@ -2,7 +2,7 @@
 
 namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Request\Builder;
 
-use RocketLabs\SellerCenterSdk\Core\Exception\InvalidFieldValue;
+use RocketLabs\SellerCenterSdk\Core\Exception\InvalidFieldEnumValue;
 use RocketLabs\SellerCenterSdk\Core\Exception\InvalidSortingDirection;
 use RocketLabs\SellerCenterSdk\Core\Exception\InvalidSortingField;
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Request\GetOrders as GetOrdersRequest;
@@ -145,7 +145,7 @@ class GetOrdersTest extends \PHPUnit_Framework_TestCase
             ],
             'invalid value' => [
                 'not_ready_to_ship',
-                InvalidFieldValue::class,
+                InvalidFieldEnumValue::class,
             ]
         ];
     }

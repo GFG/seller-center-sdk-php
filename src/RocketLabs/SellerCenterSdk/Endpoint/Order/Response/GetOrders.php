@@ -34,11 +34,12 @@ class GetOrders extends GenericResponse
     {
         parent::processDecodedResponse($responseData);
 
+        $orders = [];
         if (isset($this->body[static::ORDERS_KEY][static::ORDER_KEY])) {
-            $this->orders = new OrderCollection(
-                $this->prepareOrders()
-            );
+            $orders = $this->prepareOrders();
         }
+
+        $this->orders = new OrderCollection($orders);
     }
 
     /**

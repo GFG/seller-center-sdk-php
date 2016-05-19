@@ -267,7 +267,7 @@ class Item extends ModelAbstract
     }
 
     /**
-     * @return \DateTimeImmutable
+     * @return \DateTimeInterface
      */
     public function getPromisedShippingTimes()
     {
@@ -291,7 +291,7 @@ class Item extends ModelAbstract
     }
 
     /**
-     * @return \DateTimeImmutable
+     * @return \DateTimeInterface
      */
     public function getCreatedAt()
     {
@@ -299,7 +299,7 @@ class Item extends ModelAbstract
     }
 
     /**
-     * @return \DateTimeImmutable
+     * @return \DateTimeInterface
      */
     public function getUpdatedAt()
     {
