@@ -32,11 +32,12 @@ class GetOrderItems extends GenericResponse
     {
         parent::processDecodedResponse($responseData);
 
+        $items = [];
         if (isset($this->body[static::ORDER_ITEMS_KEY])) {
-            $this->items = new ItemCollection(
-                $this->prepareOrderItems()
-            );
+            $items = $this->prepareOrderItems();
         }
+
+        $this->items = new ItemCollection($items);
     }
 
     /**

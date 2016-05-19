@@ -30,7 +30,7 @@ abstract class ModelAbstract
     public function __construct(array $data)
     {
         foreach ($this->fieldDefinition as $key => $type) {
-            if (!array_key_exists($key, $data) || is_null($data[$key])) {
+            if (!array_key_exists($key, $data) || is_null($data[$key]) || '' === $data[$key]) {
                 $this->data[$key] = null;
                 continue;
             }
@@ -58,8 +58,18 @@ abstract class ModelAbstract
                     $this->data[$key] = new \DateTimeImmutable($data[$key]);
                     break;
                 default:
-                    $this->data[$key] = new $type($data[$key]);
+                    $this->data[$key] = $this->buildObjectFromDefinition($type, $data[$key]);
             }
         }
+    }
+
+    /**
+     * @param string $class
+     * @param mixed $data
+     * @return mixed
+     */
+    protected function buildObjectFromDefinition($class, $data)
+    {
+        return new $class($data);
     }
 }

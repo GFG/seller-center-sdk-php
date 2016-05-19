@@ -16,16 +16,16 @@ abstract class ListRequestBuilderAbstract implements RequestBuilderInterface
     /** @var array */
     protected $validSortDirections = ['ASC', 'DESC'];
 
-    /** @var \DateTime */
+    /** @var \DateTimeInterface */
     protected $createdAfter;
 
-    /** @var \DateTime */
+    /** @var \DateTimeInterface */
     protected $createdBefore;
 
-    /** @var \DateTime */
+    /** @var \DateTimeInterface */
     protected $updatedAfter;
 
-    /** @var \DateTime */
+    /** @var \DateTimeInterface */
     protected $updatedBefore;
 
     /** @var int */
@@ -40,40 +40,40 @@ abstract class ListRequestBuilderAbstract implements RequestBuilderInterface
     abstract public function build();
 
     /**
-     * @param \DateTime $createdAfter
+     * @param \DateTimeInterface $createdAfter
      * @return $this
      */
-    public function setCreatedAfter(\DateTime $createdAfter)
+    public function setCreatedAfter(\DateTimeInterface $createdAfter)
     {
         $this->createdAfter = $createdAfter;
         return $this;
     }
 
     /**
-     * @param \DateTime $createdBefore
+     * @param \DateTimeInterface $createdBefore
      * @return $this
      */
-    public function setCreatedBefore(\DateTime $createdBefore)
+    public function setCreatedBefore(\DateTimeInterface $createdBefore)
     {
         $this->createdBefore = $createdBefore;
         return $this;
     }
 
     /**
-     * @param \DateTime $updatedAfter
+     * @param \DateTimeInterface $updatedAfter
      * @return $this
      */
-    public function setUpdatedAfter(\DateTime $updatedAfter)
+    public function setUpdatedAfter(\DateTimeInterface $updatedAfter)
     {
         $this->updatedAfter = $updatedAfter;
         return $this;
     }
 
     /**
-     * @param \DateTime $updatedBefore
+     * @param \DateTimeInterface $updatedBefore
      * @return $this
      */
-    public function setUpdatedBefore(\DateTime $updatedBefore)
+    public function setUpdatedBefore(\DateTimeInterface $updatedBefore)
     {
         $this->updatedBefore = $updatedBefore;
         return $this;

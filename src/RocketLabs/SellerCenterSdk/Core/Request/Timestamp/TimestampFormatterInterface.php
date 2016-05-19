@@ -2,12 +2,15 @@
 
 namespace RocketLabs\SellerCenterSdk\Core\Request\Timestamp;
 
+/**
+ * Interface TimestampFormatterInterface
+ */
 interface TimestampFormatterInterface
 {
 
     /**
-     * @param \DateTime|null $time
+     * @param \DateTimeInterface|null $time
      * @return string
      */
-    public function getFormattedTimestamp(\DateTime $time = null);
+    public function getFormattedTimestamp(\DateTimeInterface $time = null);
 }

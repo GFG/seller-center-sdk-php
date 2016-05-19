@@ -27,10 +27,10 @@ class GetOrders extends GenericRequest
 
     /**
      * GetOrders constructor.
-     * @param \DateTime|null $createdAfter
-     * @param \DateTime|null $createdBefore
-     * @param \DateTime|null $updatedAfter
-     * @param \DateTime|null $updatedBefore
+     * @param \DateTimeInterface|null $createdAfter
+     * @param \DateTimeInterface|null $createdBefore
+     * @param \DateTimeInterface|null $updatedAfter
+     * @param \DateTimeInterface|null $updatedBefore
      * @param string|null $status
      * @param int|null $limit
      * @param int|null $offset
@@ -38,10 +38,10 @@ class GetOrders extends GenericRequest
      * @param string|null $sortDirection
      */
     public function __construct(
-        \DateTime $createdAfter = null,
-        \DateTime $createdBefore = null,
-        \DateTime $updatedAfter = null,
-        \DateTime $updatedBefore = null,
+        \DateTimeInterface $createdAfter = null,
+        \DateTimeInterface $createdBefore = null,
+        \DateTimeInterface $updatedAfter = null,
+        \DateTimeInterface $updatedBefore = null,
         $status = null,
         $limit = null,
         $offset = null,

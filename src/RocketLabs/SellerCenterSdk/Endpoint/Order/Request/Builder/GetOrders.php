@@ -2,7 +2,7 @@
 
 namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Request\Builder;
 
-use RocketLabs\SellerCenterSdk\Core\Exception\InvalidFieldValue;
+use RocketLabs\SellerCenterSdk\Core\Exception\InvalidFieldEnumValue;
 use RocketLabs\SellerCenterSdk\Core\Exception\InvalidSortingDirection;
 use RocketLabs\SellerCenterSdk\Core\Exception\InvalidSortingField;
 use RocketLabs\SellerCenterSdk\Core\Request\Builder\ListRequestBuilderAbstract;
@@ -97,7 +97,7 @@ class GetOrders extends ListRequestBuilderAbstract
     protected function checkStatus($status)
     {
         if (!in_array($status, $this->validStatuses)) {
-            throw new InvalidFieldValue($status, $this->validStatuses);
+            throw new InvalidFieldEnumValue($status, $this->validStatuses);
         }
     }
 

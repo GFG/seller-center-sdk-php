@@ -2,9 +2,11 @@
 
 namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Response;
 
-
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Model\ItemCollection;
 
+/**
+ * Class GetOrderItemsTest
+ */
 class GetOrderItemsTest extends \PHPUnit_Framework_TestCase
 {
     public function testConstructEmpty()
@@ -15,7 +17,8 @@ class GetOrderItemsTest extends \PHPUnit_Framework_TestCase
                 'Body' => []
             ]
         );
-        $this->assertNull($response->getItems());
+
+        $this->assertTrue($response->getItems()->isEmpty());
     }
 
     /**

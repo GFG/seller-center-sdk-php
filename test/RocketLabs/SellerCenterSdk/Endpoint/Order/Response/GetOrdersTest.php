@@ -6,6 +6,9 @@ use RocketLabs\SellerCenterSdk\Endpoint\Order\Model\Address;
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Model\Order;
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Model\OrderCollection;
 
+/**
+ * Class GetOrdersTest
+ */
 class GetOrdersTest extends \PHPUnit_Framework_TestCase
 {
     public function testConstructEmpty()
@@ -16,7 +19,7 @@ class GetOrdersTest extends \PHPUnit_Framework_TestCase
                 'Body' => []
             ]
         );
-        $this->assertNull($response->getOrders());
+        $this->assertTrue($response->getOrders()->isEmpty());
     }
 
     /**
