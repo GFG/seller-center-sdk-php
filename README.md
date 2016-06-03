@@ -6,7 +6,7 @@ PHP 5.5 and later.
 You can install the sdk via [Composer](http://getcomposer.org/). Run the following command:
 
 ```bash
-composer require rocket-labs/sellercenter-sdk-php
+composer require rocket-labs/sellercenter-sdk-php dev-master
 ```
 
 To use the sdk code, use Composer's [autoload](https://getcomposer.org/doc/00-intro.md#autoloading):
@@ -64,12 +64,12 @@ The following code describes the pattern how to use the endpoints implementation
 
     // get response for a certain api call with fluent interface:
     // Endpoints - name of endpoint - api method to call - call($client)
-    $response = Endpoints::orders()->getOrder(12)->call($client);
+    $response = Endpoints::order()->getOrder(12)->call($client);
 
     // Or, for some complex methods, RequestBuilders can be used,
     // In such cases API command will have following structure:
     // Endpoints - name of endpoint - api method to call - some builder's setters - build - call($client)
-    $response = Endpoints::orders()->getOrders()->setSorting('created_at', 'ASC')->setLimit(12)->build()->call($client);
+    $response = Endpoints::order()->getOrders()->setSorting('created_at', 'ASC')->setLimit(12)->build()->call($client);
 
 **see a sample in action**
 
