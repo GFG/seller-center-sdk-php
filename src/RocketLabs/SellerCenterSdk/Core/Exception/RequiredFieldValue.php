@@ -16,6 +16,6 @@ class RequiredFieldValue extends \InvalidArgumentException
      */
     public function __construct($name)
     {
-        parent::__construct(trim(printf(static::MESSAGE, $name)));
+        parent::__construct(trim(sprintf(static::MESSAGE, $name)));
     }
 }
