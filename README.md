@@ -54,7 +54,8 @@ php ./genericGetter.php
 For the most important API endpoints the SDK provides facades for simple API usage. See [endpoint samples here](samples/endpoint/).
 
 The following code describes the pattern how to use the endpoints implementation:
-
+```php
+<?php
     use RocketLabs\SellerCenterSdk\Core\Client;
     use RocketLabs\SellerCenterSdk\Core\Configuration;
     use RocketLabs\SellerCenterSdk\Endpoint\Endpoints;
@@ -70,6 +71,7 @@ The following code describes the pattern how to use the endpoints implementation
     // In such cases API command will have following structure:
     // Endpoints - name of endpoint - api method to call - some builder's setters - build - call($client)
     $response = Endpoints::orders()->getOrders()->setSorting('created_at', 'ASC')->setLimit(12)->build()->call($client);
+```
 
 **see a sample in action**
 
