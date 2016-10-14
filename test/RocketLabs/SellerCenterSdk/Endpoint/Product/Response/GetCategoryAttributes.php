@@ -53,7 +53,12 @@ class GetCategoryAttributesTest extends \PHPUnit_Framework_TestCase
                                             Attribute\Option::IS_DEFAULT => true
                                         ]
                                     ]
-                                ]
+                                ],
+                                Attribute::IS_GLOBAL_ATTRIBUTE => true,
+                                Attribute::GLOBAL_IDENTIFIER => '_first_category',
+                                Attribute::PRODUCT_TYPE => 'simple',
+                                Attribute::INPUT_TYPE => 'textfield',
+                                Attribute::FEED_NAME => 'FirstCategory',
                             ]
                         ]
                     ]
@@ -76,7 +81,12 @@ class GetCategoryAttributesTest extends \PHPUnit_Framework_TestCase
                                             Attribute\Option::IS_DEFAULT => true,
                                         ]
                                     ]
-                                ]
+                                ],
+                                Attribute::IS_GLOBAL_ATTRIBUTE => true,
+                                Attribute::GLOBAL_IDENTIFIER => '_first_category',
+                                Attribute::PRODUCT_TYPE => 'simple',
+                                Attribute::INPUT_TYPE => 'textfield',
+                                Attribute::FEED_NAME => 'FirstCategory
                             ]
                         )
                     ]
