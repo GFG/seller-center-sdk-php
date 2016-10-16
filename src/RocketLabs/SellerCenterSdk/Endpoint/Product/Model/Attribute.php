@@ -22,7 +22,7 @@ class Attribute extends ModelAbstract
     const OPTIONS                = 'Options';
     const IS_GLOBAL_ATTRIBUTE    = 'IsGlobalAttribute';
     const GLOBAL_IDENTIFIER      = 'GlobalIdentifier';
-    const FEED_NAME              = 'LimitedEdition';
+    const FEED_NAME              = 'FeedName';
     const PRODUCT_TYPE           = 'ProductType'; // 'config', 'simple', '', 'sellercenter'
     const INPUT_TYPE             = 'InputType'; // Possibly Values 'multiselect', 'dropdown', 'textfield', 'numberfield', 'datetime', 'textarea', '' (TaxClass uses empty value)
 
