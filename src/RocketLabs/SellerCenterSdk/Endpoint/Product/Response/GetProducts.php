@@ -36,7 +36,7 @@ class GetProducts extends GenericResponse
 
         $this->products = new ProductCollection([]);
 
-        if (isset($this->body[static::PRODUCTS_KEY])) {
+        if (isset($this->body[static::PRODUCTS_KEY]) && isset($this->body[static::PRODUCTS_KEY][static::PRODUCT_KEY])) {
             if (isset($this->body[static::PRODUCTS_KEY][static::PRODUCT_KEY][Product::SELLER_SKU])) {
                 $products = [ $this->body[static::PRODUCTS_KEY][static::PRODUCT_KEY] ];
             } else {

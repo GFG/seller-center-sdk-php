@@ -91,7 +91,6 @@ class Client
      */
     public function call(RequestInterface $request)
     {
-        print_r($this->buildUrl($request));
         $httpRequest = new Request(
             $request->getMethod(),
             $this->buildUrl($request),
