@@ -9,10 +9,10 @@ use RocketLabs\SellerCenterSdk\Core\Response\ErrorResponse;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\FeedIdResponse;
 
 /**
- * Class Image
+ * Class SingleImage
  * @method FeedIdResponse|ErrorResponse call(Client $client)
  */
-class Image extends GenericRequest
+class SingleImage extends GenericRequest
 {
 
     const ACTION = 'Image';
@@ -27,19 +27,16 @@ class Image extends GenericRequest
      * @param string $sellerSku
      * @param array $imageUrls
      */
-    public function __construct($images)
+    public function __construct($sellerSku, array $imageUrls)
     {
-        $output = [];
+        if (empty($imageUrls)) {
+            throw new InvalidFieldValue('[]', 'You have to add at least one image');
+        }
 
-        foreach ($images['ProductImage'] as $image) {
-            $output = [
-                static::WRAPPER => [
-                    static::SELLER_SKU_KEY => $image['SellerSku'],
-                    static::IMAGES_KEY => [
-                        static::IMAGE_KEY => $image['Images']
-                    ],
-                ]
-            ];
+        foreach ($imageUrls as $imageUrl) {
+            if (filter_var($imageUrl, FILTER_VALIDATE_URL) === false) {
+                throw new InvalidFieldValue($imageUrl, 'The value have to be a valid url.');
+            }
         }
 
         parent::__construct(
@@ -47,7 +44,14 @@ class Image extends GenericRequest
             static::ACTION,
             static::V1,
             [],
-            $output
+            [
+                static::WRAPPER => [
+                    static::SELLER_SKU_KEY => $sellerSku,
+                    static::IMAGES_KEY => [
+                        static::IMAGE_KEY => $imageUrls
+                    ],
+                ]
+            ]
         );
     }
 

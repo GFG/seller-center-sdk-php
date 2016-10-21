@@ -5,8 +5,8 @@ namespace RocketLabs\SellerCenterSdk\Endpoint;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\GetProducts;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\Product\ProductCreateCollection;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\Product\ProductUpdateCollection;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\Product\ImageCollection;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetCategoryAttributes as GetCategoryAttributesRequest;
-use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\Image;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetBrands;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetCategoryTree;
 
@@ -58,12 +58,11 @@ final class Product
     }
 
     /**
-     * @param string $sellerSku
-     * @return Image
+     * @return ImageCollection
      */
-    public function image($sellerSku)
+    public function image()
     {
-        return new Image($sellerSku);
+        return new ImageCollection();
     }
 
     /**

@@ -25,6 +25,7 @@ class GuzzleClientAdapter implements ClientInterface
      */
     public function send(RequestInterface $request, array $options = [])
     {
+        print_r((string)$request->getBody());
         return $this->guzzleClient->send($request, $options);
     }
 }

@@ -5,6 +5,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint;
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Request\Builder\GetOrders;
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Request\GetDocument;
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Request\GetOrder;
+use RocketLabs\SellerCenterSdk\Endpoint\Order\Request\GetOrderComments;
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Request\GetOrderItems;
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Request\SetStatusToCanceled;
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Request\SetStatusToPackedByMarketplace;
@@ -40,6 +41,16 @@ final class Order
     public function getOrderItems($orderId)
     {
         return new GetOrderItems($orderId);
+    }
+
+    /**
+     * @param int $orderId
+     *
+     * @return GetOrderItems
+     */
+    public function getOrderComments($orderId)
+    {
+        return new GetOrderComments($orderId);
     }
 
     /**
