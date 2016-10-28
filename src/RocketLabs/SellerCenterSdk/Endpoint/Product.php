@@ -5,6 +5,7 @@ namespace RocketLabs\SellerCenterSdk\Endpoint;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\GetProducts;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\Product\ProductCreateCollection;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\Product\ProductUpdateCollection;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\Product\ProductRemoveCollection;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetCategoryAttributes as GetCategoryAttributesRequest;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\Image;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\GetBrands;
@@ -37,6 +38,14 @@ final class Product
     public function productUpdate()
     {
         return new ProductUpdateCollection();
+    }
+
+    /**
+     * @return ProductRemoveCollection
+     */
+    public function productRemove()
+    {
+        return new ProductRemoveCollection();
     }
 
     /**
