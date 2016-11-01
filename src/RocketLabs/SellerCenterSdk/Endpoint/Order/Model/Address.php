@@ -10,38 +10,40 @@ use RocketLabs\SellerCenterSdk\Core\Model\ModelAbstract;
 class Address extends ModelAbstract
 {
     const FIRST_NAME = 'FirstName';
-    const LAST_NAME = 'LastName';
-    const PHONE = 'Phone';
-    const PHONE2 = 'Phone2';
-    const ADDRESS = 'Address1';
-    const ADDRESS2 = 'Address2';
-    const ADDRESS3 = 'Address3';
-    const ADDRESS4 = 'Address4';
-    const ADDRESS5 = 'Address5';
-    const CITY = 'City';
-    const WARD = 'Ward';
-    const REGION = 'Region';
-    const POST_CODE = 'PostCode';
-    const COUNTRY = 'Country';
+    const LAST_NAME  = 'LastName';
+    const PHONE      = 'Phone';
+    const PHONE2     = 'Phone2';
+    const ADDRESS    = 'Address1';
+    const ADDRESS2   = 'Address2';
+    const ADDRESS3   = 'Address3';
+    const ADDRESS4   = 'Address4';
+    const ADDRESS5   = 'Address5';
+    const CITY       = 'City';
+    const WARD       = 'Ward';
+    const REGION     = 'Region';
+    const POST_CODE  = 'PostCode';
+    const COUNTRY    = 'Country';
+    const EMAIL      = 'CustomerEmail';
 
     /**
      * @var array
      */
     protected $fieldDefinition = [
         self::FIRST_NAME => self::TYPE_STRING,
-        self::LAST_NAME => self::TYPE_STRING,
-        self::PHONE => self::TYPE_STRING,
-        self::PHONE2 => self::TYPE_STRING,
-        self::ADDRESS => self::TYPE_STRING,
-        self::ADDRESS2 => self::TYPE_STRING,
-        self::ADDRESS3 => self::TYPE_STRING,
-        self::ADDRESS4 => self::TYPE_STRING,
-        self::ADDRESS5 => self::TYPE_STRING,
-        self::CITY => self::TYPE_STRING,
-        self::WARD => self::TYPE_STRING,
-        self::REGION => self::TYPE_STRING,
-        self::POST_CODE => self::TYPE_STRING,
-        self::COUNTRY => self::TYPE_STRING,
+        self::LAST_NAME  => self::TYPE_STRING,
+        self::PHONE      => self::TYPE_STRING,
+        self::PHONE2     => self::TYPE_STRING,
+        self::ADDRESS    => self::TYPE_STRING,
+        self::ADDRESS2   => self::TYPE_STRING,
+        self::ADDRESS3   => self::TYPE_STRING,
+        self::ADDRESS4   => self::TYPE_STRING,
+        self::ADDRESS5   => self::TYPE_STRING,
+        self::CITY       => self::TYPE_STRING,
+        self::WARD       => self::TYPE_STRING,
+        self::REGION     => self::TYPE_STRING,
+        self::POST_CODE  => self::TYPE_STRING,
+        self::COUNTRY    => self::TYPE_STRING,
+        self::EMAIL      => self::TYPE_STRING,
     ];
 
     /**
@@ -154,5 +156,13 @@ class Address extends ModelAbstract
     public function getCountry()
     {
         return $this->data[self::COUNTRY];
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return (isset($this->data[self::EMAIL]) ? $this->data[self::EMAIL] : '');
     }
 }
