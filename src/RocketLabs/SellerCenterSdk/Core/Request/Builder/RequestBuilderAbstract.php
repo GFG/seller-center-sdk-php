@@ -9,14 +9,12 @@ use RocketLabs\SellerCenterSdk\Core\Request\RequestBuilderInterface;
  */
 abstract class RequestBuilderAbstract implements RequestBuilderInterface
 {
-
     /**
      * @param mixed $object
      * @return array
      */
     protected function convertToArray($object)
     {
-
         $data = get_object_vars($object);
 
         foreach ($data as $property => $value) {

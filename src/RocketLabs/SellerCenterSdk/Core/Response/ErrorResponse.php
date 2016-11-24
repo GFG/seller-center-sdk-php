@@ -8,7 +8,7 @@ class ErrorResponse extends AbstractResponse
 {
     const KEY_ERROR_MESSAGE = 'ErrorMessage';
     const KEY_ERROR_CODE = 'ErrorCode';
-    
+
     /**
      * @var string
      */

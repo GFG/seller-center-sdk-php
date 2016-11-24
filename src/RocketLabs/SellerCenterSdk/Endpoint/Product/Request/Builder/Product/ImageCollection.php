@@ -12,7 +12,7 @@ class ImageCollection  extends RequestBuilderAbstract
 {
     const AGGREGATOR_NAME = 'ProductImage';
 
-    protected $images;
+    protected $images = [];
 
     /**
      * @return ImageRequest
@@ -41,7 +41,9 @@ class ImageCollection  extends RequestBuilderAbstract
      */
     public function toArray()
     {
-        $images = [];
+        $images = [
+            static::AGGREGATOR_NAME => []
+        ];
 
         /** @var ImageAbstract $image */
         foreach ($this->images as $image) {

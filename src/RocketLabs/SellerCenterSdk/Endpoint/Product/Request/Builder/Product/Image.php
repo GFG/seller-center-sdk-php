@@ -43,6 +43,7 @@ class Image extends RequestBuilderAbstract
     public function setImages(array $images)
     {
         $this->images = $images;
+
         return $this;
     }
 

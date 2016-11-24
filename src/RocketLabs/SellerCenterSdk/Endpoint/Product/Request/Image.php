@@ -3,7 +3,6 @@
 namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Request;
 
 use RocketLabs\SellerCenterSdk\Core\Client;
-use RocketLabs\SellerCenterSdk\Core\Exception\InvalidFieldValue;
 use RocketLabs\SellerCenterSdk\Core\Request\GenericRequest;
 use RocketLabs\SellerCenterSdk\Core\Response\ErrorResponse;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\FeedIdResponse;
@@ -14,7 +13,6 @@ use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\FeedIdResponse;
  */
 class Image extends GenericRequest
 {
-
     const ACTION = 'Image';
 
     const WRAPPER = 'ProductImage';
@@ -29,7 +27,7 @@ class Image extends GenericRequest
      */
     public function __construct($images)
     {
-        $output = [];
+        $output = [static::WRAPPER => []];
 
         foreach ($images['ProductImage'] as $image) {
             $output = [
