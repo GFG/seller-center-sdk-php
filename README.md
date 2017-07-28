@@ -56,6 +56,8 @@ For the most important API endpoints the SDK provides facades for simple API usa
 The following code describes the pattern how to use the endpoints implementation:
 ```php
 <?php
+    require __DIR__ . '/vendor/autoload.php';
+
     use RocketLabs\SellerCenterSdk\Core\Client;
     use RocketLabs\SellerCenterSdk\Core\Configuration;
     use RocketLabs\SellerCenterSdk\Endpoint\Endpoints;
@@ -65,12 +67,12 @@ The following code describes the pattern how to use the endpoints implementation
 
     // get response for a certain api call with fluent interface:
     // Endpoints - name of endpoint - api method to call - call($client)
-    $response = Endpoints::orders()->getOrder(12)->call($client);
+    $response = Endpoints::order()->getOrder(12)->call($client);
 
     // Or, for some complex methods, RequestBuilders can be used,
     // In such cases API command will have following structure:
     // Endpoints - name of endpoint - api method to call - some builder's setters - build - call($client)
-    $response = Endpoints::orders()->getOrders()->setSorting('created_at', 'ASC')->setLimit(12)->build()->call($client);
+    $response = Endpoints::order()->getOrders()->setSorting('created_at', 'ASC')->setLimit(12)->build()->call($client);
 ```
 
 **see a sample in action**
