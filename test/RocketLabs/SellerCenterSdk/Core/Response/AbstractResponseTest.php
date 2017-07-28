@@ -13,8 +13,7 @@ class AbstractResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testConstructor(array $responseData, array $expectedHead, array $expectedBody)
     {
-        /** @var AbstractResponse $response */
-        $response = $this->getMock(AbstractResponse::class, null, [$responseData]);
+        $response = new AbstractResponse($responseData);
 
         $this->assertEquals($expectedHead, $response->getHead());
         $this->assertEquals($expectedBody, $response->getBody());

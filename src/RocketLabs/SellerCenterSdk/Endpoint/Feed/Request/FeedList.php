@@ -16,7 +16,7 @@ class FeedList extends GenericRequest
     const ACTION = 'FeedList';
 
     /**
-     * GetBrands constructor.
+     * FeedList constructor.
      */
     public function __construct()
     {

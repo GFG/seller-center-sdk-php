@@ -3,6 +3,7 @@
 namespace RocketLabs\SellerCenterSdk\Endpoint;
 
 use RocketLabs\SellerCenterSdk\Endpoint\Feed\Request\FeedList;
+use RocketLabs\SellerCenterSdk\Endpoint\Feed\Request\FeedStatus;
 
 /**
  * Class Feed
@@ -15,5 +16,13 @@ class Feed
     public function feedList()
     {
         return new FeedList();
+    }
+
+    /**
+     * @return FeedStatus
+     */
+    public function feedStatus($feedId)
+    {
+        return new FeedStatus($feedId);
     }
 }

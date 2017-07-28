@@ -22,7 +22,6 @@ class ProductCreate extends GenericRequest
      */
     public function __construct(array $productCreateData)
     {
-
         parent::__construct(
             Client::POST,
             static::ACTION,

@@ -126,19 +126,19 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     protected function getClientWithMocks(HttpRequestInterface $httpRequest)
     {
         /** @var \PHPUnit_Framework_MockObject_MockObject|RequestSignatureProviderInterface $signerMock */
-        $signerMock = $this->getMock(RequestSignatureProviderInterface::class);
+        $signerMock = $this->createMock(RequestSignatureProviderInterface::class);
         $signerMock->method('sign')->willReturn(self::SIGN);
 
         /** @var \PHPUnit_Framework_MockObject_MockObject|OutputFormatAdapterInterface $formatterMock */
-        $formatterMock = $this->getMock(OutputFormatAdapterInterface::class);
+        $formatterMock = $this->createMock(OutputFormatAdapterInterface::class);
         $formatterMock->method('convertToOutputFormat')->willReturn($this->getBodyStream());
 
         /** @var \PHPUnit_Framework_MockObject_MockObject|TimestampFormatterInterface $timestampMock */
-        $timestampMock = $this->getMock(TimestampFormatterInterface::class);
+        $timestampMock = $this->createMock(TimestampFormatterInterface::class);
         $timestampMock->method('getFormattedTimestamp')->willReturn(self::TIMESTAMP);
 
         /** @var \PHPUnit_Framework_MockObject_MockObject|Http\ClientInterface $httpMock */
-        $httpMock = $this->getMock(Http\ClientInterface::class);
+        $httpMock = $this->createMock(Http\ClientInterface::class);
         $httpMock
             ->expects($this->once())
             ->method('send')
@@ -146,7 +146,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ->willReturn(new Response());
 
         /** @var \PHPUnit_Framework_MockObject_MockObject|Factory $factoryMock */
-        $factoryMock = $this->getMock(Factory::class);
+        $factoryMock = $this->createMock(Factory::class);
         $factoryMock->expects($this->once())->method('buildResponse');
 
         return new Client(

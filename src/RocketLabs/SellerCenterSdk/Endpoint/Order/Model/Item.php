@@ -9,35 +9,37 @@ use RocketLabs\SellerCenterSdk\Core\Model\ModelAbstract;
  */
 class Item extends ModelAbstract
 {
-    const ORDER_ITEM_ID = 'OrderItemId';
-    const SHOP_ID = 'ShopId';
-    const ORDER_ID = 'OrderId';
-    const NAME = 'Name';
-    const SKU = 'Sku';
-    const SHOP_SKU = 'ShopSku';
-    const SHIPPING_TYPE = 'ShippingType';
-    const ITEM_PRICE = 'ItemPrice';
-    const PAID_PRICE = 'PaidPrice';
-    const WALLET_CREDITS = 'WalletCredits';
-    const TAX_AMOUNT = 'TaxAmount';
-    const SHIPPING_AMOUNT = 'ShippingAmount';
-    const VOUCHER_AMOUNT = 'VoucherAmount';
-    const VOUCHER_CODE = 'VoucherCode';
-    const STATUS = 'Status';
-    const SHIPMENT_PROVIDER = 'ShipmentProvider';
-    const IS_DIGITAL = 'IsDigital';
-    const DIGITAL_DELIVERY_INFO = 'DigitalDeliveryInfo';
-    const TRACKING_CODE = 'TrackingCode';
-    const REASON = 'Reason';
-    const REASON_DETAIL = 'ReasonDetail';
-    const PURCHASE_ORDER_ID = 'PurchaseOrderId';
-    const PURCHASE_ORDER_NUMBER = 'PurchaseOrderNumber';
-    const PACKAGE_ID = 'PackageId';
+    const ORDER_ITEM_ID           = 'OrderItemId';
+    const SHOP_ID                 = 'ShopId';
+    const ORDER_ID                = 'OrderId';
+    const NAME                    = 'Name';
+    const SKU                     = 'Sku';
+    const SHOP_SKU                = 'ShopSku';
+    const SHIPPING_TYPE           = 'ShippingType';
+    const ITEM_PRICE              = 'ItemPrice';
+    const PAID_PRICE              = 'PaidPrice';
+    const WALLET_CREDITS          = 'WalletCredits';
+    const CURRENCY                = 'Currency';
+    const TAX_AMOUNT              = 'TaxAmount';
+    const SHIPPING_AMOUNT         = 'ShippingAmount';
+    const SHIPPING_SERVICE_COST   = 'ShippingServiceCost';
+    const VOUCHER_AMOUNT          = 'VoucherAmount';
+    const VOUCHER_CODE            = 'VoucherCode';
+    const STATUS                  = 'Status';
+    const SHIPMENT_PROVIDER       = 'ShipmentProvider';
+    const IS_DIGITAL              = 'IsDigital';
+    const DIGITAL_DELIVERY_INFO   = 'DigitalDeliveryInfo';
+    const TRACKING_CODE           = 'TrackingCode';
+    const REASON                  = 'Reason';
+    const REASON_DETAIL           = 'ReasonDetail';
+    const PURCHASE_ORDER_ID       = 'PurchaseOrderId';
+    const PURCHASE_ORDER_NUMBER   = 'PurchaseOrderNumber';
+    const PACKAGE_ID              = 'PackageId';
     const PROMISED_SHIPPING_TIMES = 'PromisedShippingTimes';
-    const SHIPPING_PROVIDER_TYPE = 'ShippingProviderType';
-    const EXTRA_ATTRIBUTES = 'ExtraAttributes';
-    const CREATED_AT = 'CreatedAt';
-    const UPDATED_AT = 'UpdatedAt';
+    const SHIPPING_PROVIDER_TYPE  = 'ShippingProviderType';
+    const EXTRA_ATTRIBUTES        = 'ExtraAttributes';
+    const CREATED_AT              = 'CreatedAt';
+    const UPDATED_AT              = 'UpdatedAt';
 
     /**
      * @var array
@@ -50,11 +52,12 @@ class Item extends ModelAbstract
         self::SKU => self::TYPE_STRING,
         self::SHOP_SKU => self::TYPE_STRING,
         self::SHIPPING_TYPE => self::TYPE_STRING,
-        self::ITEM_PRICE => self::TYPE_STRING,
-        self::PAID_PRICE => self::TYPE_STRING,
+        self::ITEM_PRICE => self::TYPE_FLOAT,
+        self::PAID_PRICE => self::TYPE_FLOAT,
         self::WALLET_CREDITS => self::TYPE_STRING,
-        self::TAX_AMOUNT => self::TYPE_STRING,
-        self::SHIPPING_AMOUNT => self::TYPE_STRING,
+        self::TAX_AMOUNT => self::TYPE_FLOAT,
+        self::SHIPPING_AMOUNT => self::TYPE_FLOAT,
+        self::SHIPPING_SERVICE_COST => self::TYPE_FLOAT,
         self::VOUCHER_AMOUNT => self::TYPE_STRING,
         self::VOUCHER_CODE => self::TYPE_STRING,
         self::STATUS => self::TYPE_STRING,
@@ -141,6 +144,14 @@ class Item extends ModelAbstract
     /**
      * @return string
      */
+    public function getCurrency()
+    {
+        return $this->data[self::CURRENCY];
+    }
+
+    /**
+     * @return string
+     */
     public function getPaidPrice()
     {
         return $this->data[self::PAID_PRICE];
@@ -168,6 +179,14 @@ class Item extends ModelAbstract
     public function getShippingAmount()
     {
         return $this->data[self::SHIPPING_AMOUNT];
+    }
+
+    /**
+     * @return string
+     */
+    public function getShippingServiceCost()
+    {
+        return (isset($this->data[self::SHIPPING_SERVICE_COST]) ? $this->data[self::SHIPPING_SERVICE_COST] : 0);
     }
 
     /**

@@ -13,25 +13,35 @@ class Attribute extends ModelAbstract
 {
 
     const OPTION_AGGREGATOR_NAME = 'Option';
-    const NAME = 'Name';
-    const LABEL = 'Label';
-    const IS_MANDATORY = 'isMandatory';
-    const DESCRIPTION = 'Description';
-    const ATTRIBUTE_TYPE = 'AttributeType';
-    const EXAMPLE_VALUE = 'ExampleValue';
-    const OPTIONS = 'Options';
+    const NAME                   = 'Name';
+    const LABEL                  = 'Label';
+    const IS_MANDATORY           = 'isMandatory';
+    const DESCRIPTION            = 'Description';
+    const ATTRIBUTE_TYPE         = 'AttributeType'; // Possibly Values 'option', 'value', 'system'
+    const EXAMPLE_VALUE          = 'ExampleValue';
+    const OPTIONS                = 'Options';
+    const IS_GLOBAL_ATTRIBUTE    = 'IsGlobalAttribute';
+    const GLOBAL_IDENTIFIER      = 'GlobalIdentifier';
+    const FEED_NAME              = 'FeedName';
+    const PRODUCT_TYPE           = 'ProductType'; // 'config', 'simple', '', 'sellercenter'
+    const INPUT_TYPE             = 'InputType'; // Possibly Values 'multiselect', 'dropdown', 'textfield', 'numberfield', 'datetime', 'textarea', '' (TaxClass uses empty value)
 
     /**
      * @var array
      */
     protected $fieldDefinition = [
-        self::NAME => self::TYPE_STRING,
-        self::LABEL => self::TYPE_STRING,
-        self::IS_MANDATORY => self::TYPE_BOOL,
-        self::DESCRIPTION => self::TYPE_STRING,
-        self::ATTRIBUTE_TYPE => self::TYPE_STRING,
-        self::EXAMPLE_VALUE => self::TYPE_STRING,
-        self::OPTIONS => OptionCollection::class,
+        self::NAME                => self::TYPE_STRING,
+        self::LABEL               => self::TYPE_STRING,
+        self::IS_MANDATORY        => self::TYPE_BOOL,
+        self::DESCRIPTION         => self::TYPE_STRING,
+        self::ATTRIBUTE_TYPE      => self::TYPE_STRING,
+        self::EXAMPLE_VALUE       => self::TYPE_STRING,
+        self::OPTIONS             => OptionCollection::class,
+        self::IS_GLOBAL_ATTRIBUTE => self::TYPE_BOOL,
+        self::GLOBAL_IDENTIFIER   => self::TYPE_STRING,
+        self::FEED_NAME           => self::TYPE_STRING,
+        self::PRODUCT_TYPE        => self::TYPE_STRING,
+        self::INPUT_TYPE          => self::TYPE_STRING,
     ];
 
     /**
@@ -40,6 +50,30 @@ class Attribute extends ModelAbstract
     public function getName()
     {
         return $this->data[self::NAME];
+    }
+
+    /**
+     * @return string
+     */
+    public function getFeedName()
+    {
+        return $this->data[self::FEED_NAME];
+    }
+
+    /**
+     * @return string
+     */
+    public function getGlobalIdentifier()
+    {
+        return $this->data[self::GLOBAL_IDENTIFIER];
+    }
+
+    /**
+     * @return string
+     */
+    public function isGlobalAttribute()
+    {
+        return (bool) $this->data[self::IS_GLOBAL_ATTRIBUTE];
     }
 
     /**
@@ -70,6 +104,20 @@ class Attribute extends ModelAbstract
     public function getAttributeType()
     {
         return $this->data[self::ATTRIBUTE_TYPE];
+    }
+    /**
+     * @return string
+     */
+    public function getInputType()
+    {
+        return $this->data[self::INPUT_TYPE];
+    }
+    /**
+     * @return string
+     */
+    public function getProductType()
+    {
+        return $this->data[self::PRODUCT_TYPE];
     }
     /**
      * @return string

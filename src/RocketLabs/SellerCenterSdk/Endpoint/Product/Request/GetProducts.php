@@ -64,7 +64,7 @@ class GetProducts extends GenericRequest
         $offset !== null && $query[static::OFFSET_FIELD] = $offset;
         $search !== null && $query[static::SEARCH_FIELD] = $search;
         $filter !== null && $query[static::FILTER_FIELD] = $filter;
-        $skuSellerList !== null && $query[static::SKU_SELLER_LIST_FIELD] = '[' . implode(',', $skuSellerList) . ']';
+        $skuSellerList !== null && $query[static::SKU_SELLER_LIST_FIELD] = json_encode($skuSellerList);
         $globalIdentifier !== null && $query[static::GLOBAL_IDENTIFIER_FIELD] = $globalIdentifier ? 1 : 0;
 
         parent::__construct(
