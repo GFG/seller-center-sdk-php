@@ -1,0 +1,30 @@
+<?php
+
+namespace RocketLabs\SellerCenterSdk\Endpoint\Order\Request;
+
+use RocketLabs\SellerCenterSdk\Core\Client;
+use RocketLabs\SellerCenterSdk\Core\Request\GenericRequest;
+
+/**
+ * Class SetStatusToDelivered
+ */
+class SetStatusToDelivered extends GenericRequest
+{
+    const ACTION = 'SetStatusToDelivered';
+    const ORDER_ITEM_ID = 'OrderItemId';
+
+    /**
+     * @param int[] $orderItemId
+     */
+    public function __construct($orderItemId)
+    {
+        parent::__construct(
+            Client::POST,
+            static::ACTION,
+            static::V1,
+            [
+                static::ORDER_ITEM_ID => $orderItemId
+            ]
+        );
+    }
+}
