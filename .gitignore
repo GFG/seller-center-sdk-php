@@ -3,3 +3,4 @@ composer.lock
 vendor/
 samples/config/config.php
 /phpunit.xml
+/nbproject/private/

@@ -8,26 +8,26 @@ use RocketLabs\SellerCenterSdk\Core\Response\ErrorResponse;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Response\FeedIdResponse;
 
 /**
- * Class ProductUpdate
+ * Class ProductRemove
  * @method FeedIdResponse|ErrorResponse call(Client $client)
  */
-class ProductUpdate extends GenericRequest
+class ProductRemove extends GenericRequest
 {
-    const ACTION = 'ProductUpdate';
+    const ACTION = 'ProductRemove';
 
     /**
      * ProductCreate constructor.
      *
-     * @param array $productUpdateData
+     * @param array $productRemoveData
      */
-    public function __construct(array $productUpdateData)
+    public function __construct(array $productRemoveData)
     {
         parent::__construct(
             Client::POST,
             static::ACTION,
             static::V1,
             [],
-            $productUpdateData
+            $productRemoveData
         );
     }
 

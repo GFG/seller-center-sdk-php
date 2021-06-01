@@ -16,4 +16,12 @@ class Feed
     {
         return new FeedList();
     }
+    
+    /**
+     * @return FeedStatus
+     */
+    public function feedStatus()
+    {
+        return new FeedStatus();
+    }
 }

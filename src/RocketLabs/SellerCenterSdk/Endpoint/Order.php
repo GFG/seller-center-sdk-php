@@ -9,6 +9,8 @@ use RocketLabs\SellerCenterSdk\Endpoint\Order\Request\GetOrderItems;
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Request\SetStatusToCanceled;
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Request\SetStatusToPackedByMarketplace;
 use RocketLabs\SellerCenterSdk\Endpoint\Order\Request\SetStatusToReadyToShip;
+use RocketLabs\SellerCenterSdk\Endpoint\Order\Request\SetStatusToDelivered;
+use RocketLabs\SellerCenterSdk\Endpoint\Order\Request\SetStatusToShipped;
 
 /**
  * Class Order
@@ -80,10 +82,32 @@ final class Order
      * @param string $deliveryType
      * @param string $shippingProvider
      * @param string $trackingNumber
+     * Robs
+     * @param string $documentUrl
+     * @param string $accessKey
      * @return SetStatusToReadyToShip
      */
-    public function setStatusToReadyToShip(array $orderItemIds, $deliveryType, $shippingProvider, $trackingNumber)
+    public function setStatusToReadyToShip(array $orderItemIds, $deliveryType, $shippingProvider, $trackingNumber, $documentUrl, $accessKey)
     {
-        return new SetStatusToReadyToShip($orderItemIds, $deliveryType, $shippingProvider, $trackingNumber);
+        return new SetStatusToReadyToShip($orderItemIds, $deliveryType, $shippingProvider, $trackingNumber, $documentUrl, $accessKey);
     }
+    
+    /**
+     * @param int[] $orderItemId
+     * @return SetStatusToDelivered
+     */
+    public function setStatusToDelivered($orderItemId)
+    {
+        return new SetStatusToDelivered($orderItemId);
+    }
+    
+    /**
+     * @param int[] $orderItemIds
+     * @return SetStatusToReadyToShipped
+     */
+    public function setStatusToShipped($orderItemId)
+    {
+        return new SetStatusToShipped($orderItemId);
+    }
+    
 }

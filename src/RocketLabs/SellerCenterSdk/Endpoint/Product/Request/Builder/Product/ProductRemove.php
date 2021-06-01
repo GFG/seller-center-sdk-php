@@ -4,17 +4,17 @@ namespace RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\Product;
 
 use RocketLabs\SellerCenterSdk\Core\Exception\RequiredFieldValue;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Model\Product;
-use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\ProductUpdate as ProductUpdateRequest;
+use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\ProductRemove as ProductRemoveRequest;
 use RocketLabs\SellerCenterSdk\Endpoint\Product\Request\Builder\ProductAbstract as ProductAbstractBuilder;
 
 /**
- * Class ProductUpdate
+ * Class ProductRemove
  */
-class ProductUpdate extends ProductAbstractBuilder
+class ProductRemove extends ProductAbstractBuilder
 {
 
     /**
-     * ProductUpdate constructor.
+     * ProductRemove constructor.
      *
      * @param string $sellerSku
      */
@@ -32,24 +32,15 @@ class ProductUpdate extends ProductAbstractBuilder
      */
     public function setSellerSku($sellerSku)
     {
-        throw new \BadMethodCallException('It is not allowed to call the `ProductUpdate::setSellerSku()` method.');
+        throw new \BadMethodCallException('It is not allowed to call the `ProductRemove::setSellerSku()` method.');
     }
 
     /**
-     * @inheritdoc
-     */
-    public function setSalePrice($salePrice)
-    {
-        // If $salePrice is null we should send as empty string to avoid removal by the ProductUpdate::toArray() method.
-        return parent::setSalePrice($salePrice === null ? '' : $salePrice);
-    }
-
-    /**
-     * @return ProductUpdateRequest
+     * @return ProductRemoveRequest
      */
     public function build()
     {
-        return new ProductUpdateRequest($this->toArray());
+        return new ProductRemoveRequest($this->toArray());
     }
 
     /**
